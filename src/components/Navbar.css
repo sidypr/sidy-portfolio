@@ -1,0 +1,394 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  height: 60px;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-location {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+.navbar-email {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-email:hover {
+  opacity: 0.8;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #fff, transparent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar-links li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navbar-toggle-icon,
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle-icon {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
+  content: '';
+}
+
+.navbar-toggle-icon::before {
+  top: -8px;
+}
+
+.navbar-toggle-icon::after {
+  bottom: -8px;
+}
+
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.navbar-mobile.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.navbar-mobile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-mobile-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+  display: block;
+  padding: 10px;
+}
+
+.navbar-mobile-links li a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .navbar-container {
+    position: relative;
+  }
+  
+  .navbar-links {
+    display: none;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-info {
+    max-width: 70%;
+  }
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a,
+.nav-list li Link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-list li a::after,
+.nav-list li Link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-list li a:hover::after,
+.nav-list li Link:hover::after {
+  width: 100%;
+}
+
+.nav-list li a:hover,
+.nav-list li Link:hover {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.border-hover {
+  position: relative;
+}
+
+.border-hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: var(--transformOrigin, right);
+  transition: transform 0.3s ease;
+}
+
+.border-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.bottom-border {
+  position: relative;
+}
+
+.bottom-border::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(var(--scaleX, 0));
+  transition: transform 0.3s ease;
+}
+
+.bg-foreground {
+  background-color: #000000;
+}
+
+.text-background {
+  color: #ffffff;
+}
+
+.span-w-3 {
+  width: 25%;
+}
+
+.span-w-4 {
+  width: 33.333333%;
+}
+
+.span-w-6 {
+  width: 50%;
+}
+
+.span-w-7 {
+  width: 58.333333%;
+}
+
+.highlight-link {
+  background: linear-gradient(45deg, #ff4e50, #fc913a);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(252, 145, 58, 0.5);
+}
+
+.highlight-link:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.3));
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-link::after {
+  display: none !important;
+}
+
+.navbar-mobile-links .highlight-link {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animation du bouton toggle */
+.navbar-toggle.is-active .navbar-toggle-icon {
+  background-color: transparent;
+}
+
+.navbar-toggle.is-active .navbar-toggle-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggle.is-active .navbar-toggle-icon::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* Style pour les liens actifs */
+.navbar-links li a.active {
+  color: #fff;
+  opacity: 1;
+}
+
+.navbar-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #fff, transparent);
+  transform: scaleX(1);
+}
+
+/* Assurer que le contenu peut défiler sous la navbar */
+.app-container {
+  padding-top: 60px;
+}
+
+/* Améliorations pour les appareils mobiles */
+@media (max-width: 768px) {
+  .navbar-mobile-links {
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .navbar-mobile-links li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-mobile-links li a {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-location, .navbar-email {
+    font-size: 0.8rem;
+  }
+}
+
+.navbar, .navbar-links li a, .navbar-mobile-links li a, .navbar-email, .navbar-location {
+  font-family: 'Cormorant Garamond', serif !important;
+} 

@@ -1,0 +1,112 @@
+.contact-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.login-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin: 80px auto 20px;
+  backdrop-filter: blur(10px);
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.user-box {
+  position: relative;
+}
+
+.user-box input,
+.user-box textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.user-box textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label,
+.user-box textarea:focus ~ label,
+.user-box textarea:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #ff4e50, #fc913a);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(252, 145, 58, 0.5);
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(252, 145, 58, 0.7);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding-top: 70px;
+  }
+  
+  .login-box {
+    padding: 20px;
+    margin-top: 20px;
+    width: 90%;
+  }
+} 
