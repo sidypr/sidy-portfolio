@@ -1,10 +1,19 @@
 import React from 'react';
 import './Projects.css';
+import mangastoreImg from '../photo/MANGASTORE.png';
 import pokedexImg from '../photo/POKEDEX.png';
 import spotifyImg from '../photo/API SPOTIFY.png';
 import portfolioImg from '../photo/PORTFOLIO.png';
 
 const projects = [
+  {
+    title: "Mangastore",
+    description: "Projet solo : Site e-commerce de mangas avec un design moderne, une interface intuitive et une expérience utilisateur optimisée. Développé avec React et un style épuré.",
+    image: mangastoreImg,
+    link: "https://github.com/sidypr/mangastore",
+    video: "https://youtu.be/ADfDf-j4-gs",
+    tags: ["React", "E-commerce", "Design UI/UX"]
+  },
   {
     title: "PokeBuild API",
     description: "Projet solo : Application web moderne pour explorer les Pokémon, créer des équipes et consulter des statistiques grâce à l'intégration de l'API PokéAPI.",

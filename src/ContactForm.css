@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-.login-box {
+.contact-box {
   position: relative;
   width: 100%;
   max-width: 500px;
@@ -25,78 +25,53 @@
   backdrop-filter: blur(10px);
 }
 
-.login-box h2 {
+.contact-box h2 {
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
   text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
-.user-box {
-  position: relative;
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.user-box input,
-.user-box textarea {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.user-box textarea {
-  height: 100px;
-  resize: vertical;
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.user-box label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: 0.5s;
-}
-
-.user-box input:focus ~ label,
-.user-box input:valid ~ label,
-.user-box textarea:focus ~ label,
-.user-box textarea:valid ~ label {
-  top: -20px;
-  left: 0;
+.contact-item i {
+  font-size: 1.5rem;
   color: #03e9f4;
-  font-size: 12px;
+  width: 25px;
+  text-align: center;
 }
 
-button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #fff;
-  font-size: 16px;
+.contact-item a {
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: 0.5s;
-  margin-top: 40px;
-  letter-spacing: 4px;
-  background: linear-gradient(90deg, #ff4e50, #fc913a);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(252, 145, 58, 0.5);
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(252, 145, 58, 0.7);
+.contact-item a:hover {
+  color: #03e9f4;
 }
 
 @media (max-width: 768px) {
@@ -104,7 +79,7 @@ button:hover {
     padding-top: 70px;
   }
   
-  .login-box {
+  .contact-box {
     padding: 20px;
     margin-top: 20px;
     width: 90%;

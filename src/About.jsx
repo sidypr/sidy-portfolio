@@ -4,79 +4,126 @@ import sidyNoir from './photo/sidyNoir.jpeg';
 
 const About = () => {
   return (
-    <div className="cv-root">
-      <div className="cv-header-bg">
-        <h1 className="cv-title">CURRICULUM VITAE</h1>
-      </div>
-      <div className="cv-content">
-        {/* Colonne gauche : photo + infos */}
-        <div className="cv-left">
-          <div className="cv-photo-block">
-            <div className="cv-photo-infos">
-              <div className="cv-photo-name-block">
-                <span className="cv-photo-name">SIDY</span>
-                <span className="cv-photo-date">06.06.2002</span>
+    <div className="about-container fadeIn">
+      <div className="about-content">
+        <div className="about-text">
+          <h1 className="about-title" style={{fontFamily: '"Cormorant Garamond", serif'}}>À Propos</h1>
+          <div className="about-cards">
+            <div className="about-card fadeInUp">
+              <div className="card-header">
+                <h3>Présentation</h3>
               </div>
-              <span className="cv-photo-surname">DJIMBIRA</span>
-              <span className="cv-photo-city">PARIS</span>
-            </div>
-            <img src={sidyNoir} alt="Sidy Djimbira" className="cv-photo" />
-          </div>
-        </div>
-        {/* Colonne droite : contenu */}
-        <div className="cv-right">
-          <div className="cv-block cv-work">
-            <div className="cv-block-title">EXPÉRIENCE</div>
-            <div className="cv-work-list">
-              <div className="cv-work-row">
-                <span className="cv-work-company">INSYS</span>
-                <span className="cv-work-date">2024</span>
-                <span className="cv-work-role">DÉVELOPPEUR WEB</span>
-                <span className="cv-work-loc">DISTANCIEL</span>
-              </div>
-              <div className="cv-work-row">
-                <span className="cv-work-company">LASER FORMATION</span>
-                <span className="cv-work-date">2021</span>
-                <span className="cv-work-role">FORMATION PEE</span>
-                <span className="cv-work-loc">PARIS</span>
-              </div>
-              <div className="cv-work-row">
-                <span className="cv-work-company">LYCÉE FLORA TRISTAN</span>
-                <span className="cv-work-date">2021</span>
-                <span className="cv-work-role">BAC STMG</span>
-                <span className="cv-work-loc">NOISY</span>
+              <div className="card-content presentation-content" style={{fontFamily: 'Inter, sans-serif'}}>
+                <div className="presentation-text">
+                  <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Je suis passionné par le développement web et actuellement à la recherche de ma première opportunité professionnelle en tant que développeur web ou intégrateur web.</p>
+                  <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
+                </div>
+                <div className="presentation-photo">
+                  <img alt="Sidy Djimbira" src={sidyNoir} />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="cv-block cv-software">
-            <div className="cv-block-title">COMPÉTENCES</div>
-            <ul className="cv-list">
-              <li>REACT.JS <span>5/5</span></li>
-              <li>SYMFONY <span>5/5</span></li>
-              <li>JAVASCRIPT <span>5/5</span></li>
-              <li>FIGMA <span>5/5</span></li>
-            </ul>
-          </div>
-          <div className="cv-block cv-interests">
-            <div className="cv-block-title">CENTRES D’INTÉRÊT</div>
-            <ul className="cv-list">
-              <li>FOOTBALL</li>
-              <li>LECTURE</li>
-              <li>VOYAGES</li>
-              <li>TECHNOLOGIE</li>
-            </ul>
-          </div>
-          <div className="cv-block cv-contact">
-            <div className="cv-contact-row">TÉL. <span>06 11 03 33 63</span></div>
-            <div className="cv-contact-row">MAIL <span>sidy.djimbira@gmail.com</span></div>
-            <div className="cv-contact-row">WEB <span>sidydjimbira.com</span></div>
-          </div>
-          <div className="cv-block cv-languages">
-            <div className="cv-block-title">LANGUES</div>
-            <ul className="cv-list">
-              <li><span className="language-name">Anglais</span> <span className="language-level">Courant</span></li>
-              <li><span className="language-name">Espagnol</span> <span className="language-level">Intermédiaire</span></li>
-            </ul>
+
+            <div className="about-card fadeInUp" style={{animationDelay: '0.2s'}}>
+              <div className="card-header">
+                <h3>Compétences Techniques</h3>
+              </div>
+              <div className="card-content">
+                <div className="skills-grid">
+                  <div className="skill-category">
+                    <h4>Front-end</h4>
+                    <div className="tech-logos">
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+                        <span>HTML5</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+                        <span>CSS3</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                        <span>JavaScript</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                        <span>React</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" />
+                        <span>Tailwind</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-category">
+                    <h4>Back-end</h4>
+                    <div className="tech-logos">
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+                        <span>PHP</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony" />
+                        <span>Symfony</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                        <span>MySQL</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+                        <span>Node.js</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-category">
+                    <h4>Outils & Design</h4>
+                    <div className="tech-logos">
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+                        <span>Figma</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                        <span>Git</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+                        <span>GitHub</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
+                        <span>VS Code</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="about-card fadeInUp" style={{animationDelay: '0.3s'}}>
+              <div className="card-header">
+                <h3>Autres Compétences</h3>
+              </div>
+              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
+                <ul className="skills-list">
+                  <li>Création de sites web de A à Z</li>
+                  <li>Mise en ligne et hébergement de projets</li>
+                  <li>Optimisation responsive et accessibilité</li>
+                  <li>Gestion de projet et méthodologie agile</li>
+                  <li>Intégration de maquettes</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="about-card fadeInUp" style={{animationDelay: '0.4s'}}>
+              <div className="card-header">
+                <h3>Objectif Professionnel</h3>
+              </div>
+              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
+                <p>Je cherche à intégrer une équipe dynamique qui me permettra de continuer à progresser tout en apportant mes compétences techniques, ma rigueur et ma motivation. Curieux, autonome et à l'écoute, je suis prêt à relever tous les défis techniques et créatifs !</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
