@@ -55,6 +55,22 @@
   transition: box-shadow 0.3s;
 }
 
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  cursor: pointer;
+}
+
+.project-links {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .project-block:hover {
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
@@ -172,8 +188,6 @@
 
 .project-link-btn {
   display: inline-block;
-  margin-top: 0.7rem;
-  margin-right: 0.7rem;
   background: #111;
   color: #fff;
   border-radius: 20px;
@@ -183,6 +197,17 @@
   text-decoration: none;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.project-link-btn.secondary {
+  background: #f0f0f0;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+.project-link-btn.secondary:hover {
+  background: #e0e0e0;
+  color: #333;
 }
 
 .project-link-btn:hover {

@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Projects from './components/Projects';
 import ContactForm from './ContactForm';
+import MangastoreProject from './components/MangastoreProject';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/mangastore" element={<MangastoreProject />} />
           <Route path="/contact" element={<ContactForm />} />
         </Routes>
       </div>

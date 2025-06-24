@@ -8,14 +8,16 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  background: #000;
 }
 
 .home-content {
   text-align: center;
-  z-index: 2;
+  z-index: 10;
   padding: 2rem;
   max-width: 800px;
   margin: auto;
+  position: relative;
 }
 
 .home-title {
@@ -23,8 +25,9 @@
   font-weight: 700;
   margin-bottom: 1rem;
   color: #fff;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   animation: fadeInUp 1s ease-out;
+  letter-spacing: -0.02em;
 }
 
 .home-subtitle {

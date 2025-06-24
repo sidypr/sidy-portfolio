@@ -3,11 +3,11 @@
   from {
     opacity: 0;
     transform: translateY(20px);
-  }
+}
   to {
     opacity: 1;
     transform: translateY(0);
-  }
+}
 }
 
 @keyframes fadeInUp {
@@ -230,8 +230,8 @@
   .presentation-content {
     flex-direction: column;
     gap: 20px;
-  }
-  
+}
+
   .presentation-photo {
     order: -1;
   }
@@ -239,23 +239,23 @@
   .presentation-photo img {
     width: 150px;
     height: 190px;
-  }
+}
   
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-  }
+}
   
   .tech-logos {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 15px;
-  }
+}
 }
 
 @media (max-width: 768px) {
   .about-container {
     padding: 80px 15px 40px;
-  }
+}
   
   .about-title {
     font-size: 2.5rem;
@@ -264,8 +264,8 @@
   
   .about-card {
     padding: 20px;
-  }
-  
+}
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
