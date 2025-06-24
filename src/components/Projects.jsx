@@ -4,9 +4,19 @@ import './Projects.css';
 import mangastoreImg from '../photo/MANGASTORE.png';
 import pokedexImg from '../photo/POKEDEX.png';
 import spotifyImg from '../photo/API SPOTIFY.png';
+import spotifyMobileImg from '../photo/image &spotifyappmobile_0441.PNG';
 import portfolioImg from '../photo/PORTFOLIO.png';
 
 const projects = [
+  {
+    title: "Spotify Stats Mobile",
+    description: "Application mobile React Native développée avec Expo qui permet aux utilisateurs de visualiser leurs statistiques d'écoute Spotify et gérer leurs playlists avec une interface moderne.",
+    image: spotifyMobileImg,
+    link: "/projects/spotify-mobile",
+    isInternal: true,
+    externalLink: "https://github.com/sidypr/stats-Spotify-mob",
+    tags: ["React Native", "Expo", "Spotify API", "TypeScript"]
+  },
   {
     title: "Mangastore",
     description: "Projet solo : Site e-commerce de mangas avec un design moderne, une interface intuitive et une expérience utilisateur optimisée. Développé avec Symfony et un style épuré.",

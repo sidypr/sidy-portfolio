@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import ContactForm from './ContactForm';
 import MangastoreProject from './components/MangastoreProject';
 import PortfolioPhotoProject from './components/PortfolioPhotoProject';
+import SpotifyMobileProject from './components/SpotifyMobileProject';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/spotify-mobile" element={<SpotifyMobileProject />} />
           <Route path="/projects/mangastore" element={<MangastoreProject />} />
           <Route path="/projects/portfolio-photo" element={<PortfolioPhotoProject />} />
           <Route path="/contact" element={<ContactForm />} />
