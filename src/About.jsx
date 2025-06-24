@@ -53,6 +53,14 @@ const About = () => {
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" />
                         <span>Tailwind</span>
                       </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+                        <span>TypeScript</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" />
+                        <span>Bootstrap</span>
+                      </div>
                     </div>
                   </div>
                   <div className="skill-category">
@@ -94,6 +102,19 @@ const About = () => {
                       <div className="tech-logo">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
                         <span>VS Code</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-category">
+                    <h4>Mobile & Apps</h4>
+                    <div className="tech-logos">
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" />
+                        <span>React Native</span>
+                      </div>
+                      <div className="tech-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg" alt="Expo" />
+                        <span>Expo</span>
                       </div>
                     </div>
                   </div>

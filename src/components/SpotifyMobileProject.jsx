@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SpotifyMobileProject.css';
 
@@ -33,17 +33,17 @@ const SpotifyMobileProject = () => {
     setSelectedImage(images[index]);
   };
 
-  const closeModal = useCallback(() => {
+  const closeModal = () => {
     setSelectedImage(null);
-  }, []);
+  };
 
-  const navigateImage = useCallback((direction) => {
+  const navigateImage = (direction) => {
     const newIndex = direction === 'next' 
       ? (currentIndex + 1) % images.length 
       : (currentIndex - 1 + images.length) % images.length;
     setCurrentIndex(newIndex);
     setSelectedImage(images[newIndex]);
-  }, [currentIndex, images.length]);
+  };
 
   // Gestion clavier
   React.useEffect(() => {
@@ -67,7 +67,7 @@ const SpotifyMobileProject = () => {
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage, closeModal, navigateImage]);
+  }, [selectedImage, currentIndex]);
 
   const technologies = [
     { name: 'React Native', icon: 'devicon-react-original' },

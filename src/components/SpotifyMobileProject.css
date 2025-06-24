@@ -6,69 +6,36 @@
   font-family: 'Arial', sans-serif;
 }
 
-.project-header {
-  max-width: 1200px;
-  margin: 0 auto 3rem;
+.spotify-mobile-project .project-header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 80px 0;
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 100%;
 }
 
-.back-link {
-  color: #fff;
+.spotify-mobile-project .back-link {
+  color: #888;
   text-decoration: none;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   display: inline-block;
   transition: color 0.3s ease;
 }
 
-.back-link:hover {
-  color: #1db954;
-}
-
-.project-title-section {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.project-title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(45deg, #1db954, #1ed760);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.project-subtitle {
-  font-size: 1.3rem;
-  color: #b3b3b3;
-  margin-bottom: 2rem;
-}
-
-.project-main-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.project-link-btn {
-  padding: 0.8rem 2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.project-link-btn.primary {
-  background: linear-gradient(45deg, #1db954, #1ed760);
+.spotify-mobile-project .back-link:hover {
   color: #fff;
 }
 
-.project-link-btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(29, 185, 84, 0.3);
-}
+.spotify-mobile-project .project-title-section { text-align: center; margin: 2rem 0; }
+.spotify-mobile-project .project-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; background: linear-gradient(45deg,#1db954,#1ed760); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.spotify-mobile-project .project-subtitle { font-size:1.3rem; color:rgba(255,255,255,0.9); margin-bottom:40px; }
+
+.spotify-mobile-project .project-main-links { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
+.spotify-mobile-project .project-link-btn { padding:0.8rem 2rem; border-radius:25px; font-weight:600; text-decoration:none; transition:all 0.3s ease; border:1px solid rgba(255,255,255,0.2);}
+.spotify-mobile-project .project-link-btn.primary{background:linear-gradient(45deg,#1db954,#1ed760);color:#fff;}
+.spotify-mobile-project .project-link-btn.primary:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(29,185,84,0.2);}
 
 .project-content {
   max-width: 1200px;

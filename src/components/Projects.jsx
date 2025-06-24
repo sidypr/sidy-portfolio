@@ -15,6 +15,7 @@ const projects = [
     link: "/projects/spotify-mobile",
     isInternal: true,
     externalLink: "https://github.com/sidypr/stats-Spotify-mob",
+    video: "https://youtu.be/YOUR_VIDEO_ID",
     tags: ["React Native", "Expo", "Spotify API", "TypeScript"]
   },
   {
