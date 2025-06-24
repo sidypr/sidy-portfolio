@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './MangastoreProject.css';
 import mangastore1 from '../photo/mangastore1.png';
 import mangastore2 from '../photo/mangastore2.png';
@@ -86,15 +87,16 @@ const MangastoreProject = () => {
     <div className="mangastore-project">
       <div className="project-header">
         <div className="container">
-          <h1 className="project-title">MangaStore</h1>
+          <Link to="/projects" className="back-link">← Retour aux projets</Link>
+          <h1 className="project-title">🛒 MangaStore</h1>
           <p className="project-subtitle">Boutique en ligne de mangas développée avec Symfony 6.4</p>
           
           <div className="project-links">
             <a href="https://github.com/sidypr/mangastore" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              <i className="fab fa-github"></i> Voir le code
+              <i className="fab fa-github"></i> Code source
             </a>
             <a href="https://youtu.be/ADfDf-j4-gs" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              <i className="fab fa-youtube"></i> Voir la démo
+              <i className="fab fa-youtube"></i> Voir la vidéo
             </a>
           </div>
         </div>
@@ -102,15 +104,60 @@ const MangastoreProject = () => {
 
       <div className="container">
         <section className="project-overview">
-          <h2>Vue d'ensemble</h2>
+          <h2>🎯 Vue d'ensemble</h2>
           <p>
             <strong>MangaStore</strong> est une <strong>boutique en ligne de mangas</strong> développée avec 
-            <strong> Symfony 6.4</strong>, offrant une plateforme e-commerce complète pour la vente de mangas.
+            <strong> Symfony 6.4</strong>, offrant une plateforme e-commerce complète pour la vente de mangas 
+            avec un système d'authentification sécurisé, un panier d'achat intégré et une interface d'administration moderne.
           </p>
         </section>
 
+        {/* Architecture technique */}
+        <section className="architecture-section">
+          <h2>🏗️ Architecture technique</h2>
+          <div className="architecture-grid">
+            <div className="arch-card">
+              <h3>🔧 Framework & Backend</h3>
+              <ul>
+                <li><strong>Symfony 6.4 LTS</strong> - Framework PHP moderne</li>
+                <li><strong>PHP 8.4.6</strong> - Langage serveur</li>
+                <li><strong>Doctrine ORM</strong> - Gestion base de données</li>
+                <li><strong>EasyAdmin 4</strong> - Interface d'administration</li>
+                <li><strong>Symfony Security</strong> - Authentification</li>
+              </ul>
+            </div>
+            <div className="arch-card">
+              <h3>💾 Base de données</h3>
+              <ul>
+                <li><strong>MySQL 8.0</strong> - SGBD relationnel</li>
+                <li><strong>Migrations Doctrine</strong> - Versioning BDD</li>
+                <li><strong>Fixtures</strong> - Données de démonstration</li>
+                <li><strong>Relations complexes</strong> - One-to-Many, Many-to-Many</li>
+              </ul>
+            </div>
+            <div className="arch-card">
+              <h3>🎨 Frontend & Interface</h3>
+              <ul>
+                <li><strong>Bootstrap 5.3.6</strong> - Framework CSS</li>
+                <li><strong>React 18.2.0</strong> - Composants dynamiques</li>
+                <li><strong>Webpack Encore</strong> - Build assets</li>
+                <li><strong>Stimulus Bridge</strong> - Intégration JS</li>
+              </ul>
+            </div>
+            <div className="arch-card">
+              <h3>💳 Services externes</h3>
+              <ul>
+                <li><strong>Stripe API</strong> - Paiements sécurisés</li>
+                <li><strong>Symfony Mailer</strong> - Envoi d'emails</li>
+                <li><strong>KnpPaginatorBundle</strong> - Pagination</li>
+                <li><strong>Framer Motion</strong> - Animations</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section className="tech-stack">
-          <h2>Technologies utilisées</h2>
+          <h2>🛠️ Technologies utilisées</h2>
           
           <div className="tech-grid">
             <div className="tech-category">
@@ -151,7 +198,7 @@ const MangastoreProject = () => {
             </div>
             
             <div className="tech-category">
-              <h3>Outils</h3>
+              <h3>Outils & Services</h3>
               <div className="tech-icons">
                 {technologies.tools.map((tech, index) => (
                   <div key={index} className="tech-item">
@@ -164,13 +211,14 @@ const MangastoreProject = () => {
                 <li><strong>Paiements</strong> : Stripe API</li>
                 <li><strong>Pagination</strong> : KnpPaginatorBundle</li>
                 <li><strong>Emails</strong> : Symfony Mailer</li>
+                <li><strong>Versioning</strong> : Git & GitHub</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section className="database-structure">
-          <h2>Structure de la base de données</h2>
+          <h2>💾 Structure de la base de données</h2>
           <div className="database-schema">
             <pre>
 {`┌─────────────┐    ┌──────────────┐    ┌─────────────┐
@@ -197,46 +245,121 @@ const MangastoreProject = () => {
                    └──────────────┘`}
             </pre>
           </div>
+          <div className="db-info">
+            <h3>📋 Entités principales</h3>
+            <div className="entities-grid">
+              <div className="entity-card">
+                <h4>User</h4>
+                <p>Gestion des utilisateurs avec authentification Symfony Security</p>
+              </div>
+              <div className="entity-card">
+                <h4>Product</h4>
+                <p>Catalogue de mangas avec images, prix et descriptions</p>
+              </div>
+              <div className="entity-card">
+                <h4>Category</h4>
+                <p>Classification des mangas par genres et thématiques</p>
+              </div>
+              <div className="entity-card">
+                <h4>Order</h4>
+                <p>Gestion des commandes avec statuts et historique</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="features">
-          <h2>Fonctionnalités principales</h2>
+          <h2>🚀 Fonctionnalités principales</h2>
           <div className="features-grid">
             <div className="feature">
               <div className="feature-icon">🛒</div>
               <h4>E-commerce complet</h4>
-              <p>Catalogue de produits, panier, commandes et gestion des stocks</p>
+              <p>Catalogue de produits, panier, commandes et gestion des stocks en temps réel</p>
             </div>
             <div className="feature">
               <div className="feature-icon">💳</div>
               <h4>Paiement sécurisé</h4>
-              <p>Intégration Stripe pour des transactions sécurisées</p>
+              <p>Intégration Stripe pour des transactions sécurisées avec cartes bancaires</p>
             </div>
             <div className="feature">
               <div className="feature-icon">👤</div>
               <h4>Gestion utilisateurs</h4>
-              <p>Inscription, connexion et gestion des profils</p>
+              <p>Inscription, connexion, profils utilisateurs et historique des commandes</p>
             </div>
             <div className="feature">
               <div className="feature-icon">⚙️</div>
               <h4>Interface d'administration</h4>
-              <p>Dashboard administrateur avec EasyAdmin</p>
+              <p>Dashboard administrateur complet avec EasyAdmin pour gérer le site</p>
             </div>
             <div className="feature">
               <div className="feature-icon">📱</div>
               <h4>Responsive Design</h4>
-              <p>Interface adaptée à tous les écrans</p>
+              <p>Interface adaptée à tous les écrans : mobile, tablette et desktop</p>
             </div>
             <div className="feature">
               <div className="feature-icon">🔍</div>
               <h4>Recherche et filtres</h4>
-              <p>Recherche avancée par catégorie et critères</p>
+              <p>Recherche avancée par catégorie, prix et critères multiples</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Installation */}
+        <section className="installation-section">
+          <h2>🔧 Installation et démarrage</h2>
+          <div className="install-steps">
+            <div className="step-card">
+              <h3>1. Clonage du projet</h3>
+              <div className="code-block">
+                <pre>
+{`git clone https://github.com/sidypr/mangastore.git
+cd mangastore`}
+                </pre>
+              </div>
+            </div>
+            <div className="step-card">
+              <h3>2. Installation des dépendances</h3>
+              <div className="code-block">
+                <pre>
+{`# Dépendances PHP
+composer install
+
+# Dépendances Node.js
+npm install`}
+                </pre>
+              </div>
+            </div>
+            <div className="step-card">
+              <h3>3. Configuration de la base de données</h3>
+              <div className="code-block">
+                <pre>
+{`# Configurer .env.local
+DATABASE_URL="mysql://user:password@127.0.0.1:3306/mangastore"
+
+# Créer la base de données
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+php bin/console doctrine:fixtures:load`}
+                </pre>
+              </div>
+            </div>
+            <div className="step-card">
+              <h3>4. Lancement du serveur</h3>
+              <div className="code-block">
+                <pre>
+{`# Compilation des assets
+npm run build
+
+# Démarrage du serveur Symfony
+symfony server:start`}
+                </pre>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="gallery">
-          <h2>Galerie du projet</h2>
+          <h2>📸 Aperçu de l'application</h2>
           <div className="gallery-container">
             <div className="main-image-container">
               <img 
@@ -268,12 +391,90 @@ const MangastoreProject = () => {
           </div>
         </section>
 
+        {/* Fonctionnalités avancées */}
+        <section className="advanced-features">
+          <h2>🔥 Fonctionnalités avancées</h2>
+          <div className="advanced-grid">
+            <div className="advanced-card">
+              <h3>🔐 Sécurité</h3>
+              <ul>
+                <li>Authentification Symfony Security</li>
+                <li>Hashage des mots de passe avec Argon2i</li>
+                <li>Protection CSRF sur tous les formulaires</li>
+                <li>Validation côté serveur et client</li>
+                <li>Roles et permissions utilisateurs</li>
+              </ul>
+            </div>
+            <div className="advanced-card">
+              <h3>📊 Performance</h3>
+              <ul>
+                <li>Pagination optimisée avec KnpPaginator</li>
+                <li>Cache Symfony pour les données statiques</li>
+                <li>Lazy loading des images produits</li>
+                <li>Compression des assets avec Webpack</li>
+                <li>Indexation base de données optimisée</li>
+              </ul>
+            </div>
+            <div className="advanced-card">
+              <h3>🎨 UX/UI</h3>
+              <ul>
+                <li>Interface responsive Bootstrap 5</li>
+                <li>Animations fluides avec Framer Motion</li>
+                <li>Design moderne et intuitif</li>
+                <li>Feedback utilisateur en temps réel</li>
+                <li>Messages flash pour les actions</li>
+              </ul>
+            </div>
+            <div className="advanced-card">
+              <h3>🔧 Administration</h3>
+              <ul>
+                <li>Dashboard EasyAdmin personnalisé</li>
+                <li>CRUD complet pour tous les modèles</li>
+                <li>Statistiques de vente en temps réel</li>
+                <li>Gestion des stocks et inventaire</li>
+                <li>Export des données en CSV/Excel</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* État du projet */}
+        <section className="project-status">
+          <h2>🎯 État du projet</h2>
+          <div className="status-card">
+            <div className="status-badge">✅ Projet complet et fonctionnel</div>
+            <div className="status-grid">
+              <div className="status-item">
+                <h4>✅ Frontend complet</h4>
+                <p>Interface utilisateur moderne et responsive</p>
+              </div>
+              <div className="status-item">
+                <h4>✅ Backend robuste</h4>
+                <p>API Symfony avec architecture MVC</p>
+              </div>
+              <div className="status-item">
+                <h4>✅ E-commerce fonctionnel</h4>
+                <p>Panier, commandes et paiements Stripe</p>
+              </div>
+              <div className="status-item">
+                <h4>✅ Administration complète</h4>
+                <p>Interface admin EasyAdmin opérationnelle</p>
+              </div>
+            </div>
+            <p className="status-description">
+              <strong>MangaStore</strong> est un projet e-commerce complet qui démontre ma maîtrise 
+              de Symfony et du développement full-stack. Il illustre ma capacité à créer des applications 
+              web modernes, sécurisées et scalables avec une expérience utilisateur optimisée.
+            </p>
+          </div>
+        </section>
+
         <section className="project-conclusion">
-          <h2>Conclusion</h2>
+          <h2>🎯 Conclusion</h2>
           <p>
             Ce projet démontre ma maîtrise de <strong>Symfony</strong> et du développement d'applications 
             e-commerce complètes. Il illustre ma capacité à intégrer des technologies modernes pour créer 
-            une expérience utilisateur fluide et sécurisée.
+            une expérience utilisateur fluide et sécurisée, avec une architecture robuste et évolutive.
           </p>
         </section>
       </div>

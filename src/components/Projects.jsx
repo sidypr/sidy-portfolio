@@ -18,6 +18,16 @@ const projects = [
     tags: ["Symfony", "E-commerce", "Design UI/UX"]
   },
   {
+    title: "Portfolio Photo",
+    description: "Projet solo : Application web de gestion de portfolio photographique avec galerie interactive, système d'administration complet et interface responsive moderne.",
+    image: portfolioImg,
+    link: "/projects/portfolio-photo",
+    isInternal: true,
+    externalLink: "https://github.com/sidypr/portfolioPhoto",
+    video: "https://youtu.be/IC8knROABTA",
+    tags: ["Symfony", "PHP", "SQLite", "Administration"]
+  },
+  {
     title: "PokeBuild API",
     description: "Projet solo : Application web moderne pour explorer les Pokémon, créer des équipes et consulter des statistiques grâce à l'intégration de l'API PokéAPI.",
     image: pokedexImg,
@@ -30,14 +40,6 @@ const projects = [
     image: spotifyImg,
     link: "https://tourmaline-licorice-6a583d.netlify.app/",
     tags: ["React", "API Spotify", "OAuth"]
-  },
-  {
-    title: "portfolioPhoto (Symfony)",
-    description: "Projet solo : Application web de gestion de portfolio photographique : galerie, filtrage, espace admin, responsive, authentification sécurisée.",
-    image: portfolioImg,
-    link: "https://github.com/sidypr/portfolioPhoto",
-    video: "https://youtu.be/IC8knROABTA",
-    tags: ["Symfony", "PHP", "Galerie photo"]
   }
 ];
 
@@ -70,19 +72,19 @@ const Projects = () => {
               </Link>
             ) : (
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-card-link">
-                <div className="project-image-container">
-                  <img src={project.image} alt={project.title} className="project-image" />
+            <div className="project-image-container">
+              <img src={project.image} alt={project.title} className="project-image" />
+            </div>
+            <div className="project-info">
+              <h2 className="project-block-title">{project.title}</h2>
+              <p className="project-block-desc">{project.description}</p>
+              {project.tags && (
+                <div className="project-tags">
+                  {project.tags.map((tag, i) => (
+                    <span className="project-tag" key={i}>{tag}</span>
+                  ))}
                 </div>
-                <div className="project-info">
-                  <h2 className="project-block-title">{project.title}</h2>
-                  <p className="project-block-desc">{project.description}</p>
-                  {project.tags && (
-                    <div className="project-tags">
-                      {project.tags.map((tag, i) => (
-                        <span className="project-tag" key={i}>{tag}</span>
-                      ))}
-                    </div>
-                  )}
+              )}
                 </div>
               </a>
             )}
