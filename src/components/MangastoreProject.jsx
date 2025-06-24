@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './MangastoreProject.css';
+import MasonryGallery from './MasonryGallery/MasonryGallery';
 import mangastore1 from '../photo/mangastore1.png';
 import mangastore2 from '../photo/mangastore2.png';
 import mangastore3 from '../photo/mangastore3.png';
 import mangastore4 from '../photo/mangastore4.png';
 import mangastore5 from '../photo/mangastore5.png';
-import mangartore6 from '../photo/mangartore6.png';
+import mangastore6 from '../photo/mangartore6.png';
 import mangastore7 from '../photo/mangastore7.png';
 import mangastore8 from '../photo/mangastore8.png';
 import mangastore9 from '../photo/mangastore9.png';
@@ -21,7 +22,7 @@ const MangastoreProject = () => {
     { src: mangastore3, alt: "Page de connexion", description: "Interface de connexion utilisateur avec formulaire d'authentification" },
     { src: mangastore4, alt: "Page d'inscription", description: "Formulaire d'inscription pour créer un nouveau compte utilisateur" },
     { src: mangastore5, alt: "Détail d'un manga", description: "Page produit détaillée avec informations complètes, prix et bouton d'achat" },
-    { src: mangartore6, alt: "Interface utilisateur", description: "Espace personnel de l'utilisateur avec gestion du profil et des commandes" },
+    { src: mangastore6, alt: "Interface utilisateur", description: "Espace personnel de l'utilisateur avec gestion du profil et des commandes" },
     { src: mangastore7, alt: "Panel d'administration", description: "Interface d'administration EasyAdmin pour la gestion du site" },
     { src: mangastore8, alt: "Gestion des mangas", description: "Interface admin pour ajouter, modifier et supprimer les mangas du catalogue" },
     { src: mangastore9, alt: "Dashboard administrateur", description: "Tableau de bord avec statistiques, métriques et vue d'ensemble du site" }
@@ -71,17 +72,14 @@ const MangastoreProject = () => {
   };
 
   React.useEffect(() => {
-    if (isModalOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
     };
-  }, [isModalOpen]);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [closeModal, nextImage, prevImage]);
 
   return (
     <div className="mangastore-project">
@@ -358,37 +356,12 @@ symfony server:start`}
           </div>
         </section>
 
-        <section className="gallery">
-          <h2>📸 Aperçu de l'application</h2>
-          <div className="gallery-container">
-            <div className="main-image-container">
-              <img 
-                src={images[currentImageIndex].src} 
-                alt={images[currentImageIndex].alt}
-                className="main-gallery-image"
-                onClick={() => openModal(currentImageIndex)}
-              />
-              <div className="main-image-info">
-                <h4>{images[currentImageIndex].alt}</h4>
-                <p>{images[currentImageIndex].description}</p>
-              </div>
-              <div className="gallery-navigation">
-                <button className="gallery-nav-btn prev" onClick={prevImage}>❮</button>
-                <button className="gallery-nav-btn next" onClick={nextImage}>❯</button>
-              </div>
-            </div>
-            <div className="thumbnails-container">
-              {images.map((image, index) => (
-                <div 
-                  key={index} 
-                  className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
-                  onClick={() => setCurrentImageIndex(index)}
-                >
-                  <img src={image.src} alt={image.alt} />
-                </div>
-              ))}
-            </div>
-          </div>
+        <section className="project-gallery">
+          <h2>Galerie du projet</h2>
+          <MasonryGallery images={[
+            mangastore1, mangastore2, mangastore3, mangastore4, mangastore5,
+            mangastore6, mangastore7, mangastore8, mangastore9
+          ]} />
         </section>
 
         {/* Fonctionnalités avancées */}

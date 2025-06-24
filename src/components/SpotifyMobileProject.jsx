@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SpotifyMobileProject.css';
+import MasonryGallery from './MasonryGallery/MasonryGallery';
 
 // Import de toutes les images Spotify Mobile
 import spotifyImg1 from '../photo/image &spotifyappmobile_0441.PNG';
@@ -67,7 +68,7 @@ const SpotifyMobileProject = () => {
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage, currentIndex]);
+  }, [selectedImage, currentIndex, closeModal, navigateImage]);
 
   const technologies = [
     { name: 'React Native', icon: 'devicon-react-original' },
@@ -190,13 +191,11 @@ const SpotifyMobileProject = () => {
 
         <section className="project-gallery">
           <h2>Aperçu de l'application</h2>
-          <div className="gallery-grid">
-            {images.map((image, index) => (
-              <div key={index} className="gallery-item" onClick={() => openModal(index)}>
-                <img src={image} alt={`Spotify Mobile ${index + 1}`} />
-              </div>
-            ))}
-          </div>
+          <MasonryGallery images={[
+            spotifyImg1, spotifyImg2, spotifyImg3, spotifyImg4, spotifyImg5,
+            spotifyImg6, spotifyImg7, spotifyImg8, spotifyImg9, spotifyImg10,
+            spotifyImg11, spotifyImg12, spotifyImg13, spotifyImg14
+          ]} />
         </section>
 
         <section className="project-status">

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PortfolioPhotoProject.css';
+import MasonryGallery from './MasonryGallery/MasonryGallery';
 
 // Import des images portfolio
 import portfolio1 from '../photo/portfolio1.png';
@@ -65,6 +66,7 @@ const PortfolioPhotoProject = () => {
   };
 
   const handleKeyDown = (e) => {
+    if (!images[currentImageIndex]) return;
     if (e.key === 'Escape') closeModal();
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') prevImage();
@@ -81,7 +83,7 @@ const PortfolioPhotoProject = () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, handleKeyDown]);
 
   return (
     <div className="portfolio-photo-project">
@@ -226,37 +228,12 @@ const PortfolioPhotoProject = () => {
           </div>
         </section>
 
-        <section className="gallery">
+        <section className="project-gallery">
           <h2>Galerie du projet</h2>
-          <div className="gallery-container">
-            <div className="main-image-container">
-              <img 
-                src={images[currentImageIndex].src} 
-                alt={images[currentImageIndex].alt}
-                className="main-gallery-image"
-                onClick={() => openModal(currentImageIndex)}
-              />
-              <div className="main-image-info">
-                <h4>{images[currentImageIndex].alt}</h4>
-                <p>{images[currentImageIndex].description}</p>
-              </div>
-              <div className="gallery-navigation">
-                <button className="gallery-nav-btn prev" onClick={prevImage}>❮</button>
-                <button className="gallery-nav-btn next" onClick={nextImage}>❯</button>
-              </div>
-            </div>
-            <div className="thumbnails-container">
-              {images.map((image, index) => (
-                <div 
-                  key={index} 
-                  className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
-                  onClick={() => setCurrentImageIndex(index)}
-                >
-                  <img src={image.src} alt={image.alt} />
-                </div>
-              ))}
-            </div>
-          </div>
+          <MasonryGallery images={[
+            portfolio1, portfolio2, portfolio3, portfolio4, portfolio5,
+            portfolio6, portfolio8, portfolio9
+          ]} />
         </section>
 
         <section className="installation-guide">

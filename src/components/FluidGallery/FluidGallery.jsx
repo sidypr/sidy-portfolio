@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, Suspense, useMemo } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Plane, OrbitControls, useTexture } from '@react-three/drei';
+import React, { useState, useEffect, useRef, Suspense, useMemo, useCallback } from 'react';
+import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
+import { Plane, OrbitControls } from '@react-three/drei';
 import vertexShader from './fluidVertex';
 import fragmentShader from './fluidFragment';
 import * as THREE from 'three';
@@ -10,8 +10,9 @@ import ColorThief from 'colorthief';
 /*  Slide                                                         */
 /* ------------------------------------------------------------------ */
 
-const FluidSlide = ({ texture, active }) => {
+const FluidSlide = ({ url, active }) => {
   const meshRef = useRef();
+  const texture = useLoader(THREE.TextureLoader, url);
   const material = useMemo(
     () =>
       new THREE.ShaderMaterial({
@@ -30,7 +31,6 @@ const FluidSlide = ({ texture, active }) => {
 
   useFrame((state, delta) => {
     material.uniforms.uTime.value += delta;
-    // transition douce
     material.uniforms.uHover.value = THREE.MathUtils.lerp(
       material.uniforms.uHover.value,
       active ? 1 : 0,
@@ -87,12 +87,15 @@ const DynamicGlassBackground = ({ src }) => {
 
 const FluidGallery = ({ sources = [] }) => {
   const [index, setIndex] = useState(0);
-  const textures = useTexture(sources);
 
-  const next = () => setIndex((prev) => (prev + 1) % sources.length);
-  const prev = () => setIndex((prev) => (prev - 1 + sources.length) % sources.length);
+  const next = useCallback(() => {
+    setIndex((prev) => (prev + 1) % sources.length);
+  }, [sources.length]);
 
-  // navigation clavier
+  const prev = useCallback(() => {
+    setIndex((prev) => (prev - 1 + sources.length) % sources.length);
+  }, [sources.length]);
+
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === 'ArrowRight') next();
@@ -100,7 +103,7 @@ const FluidGallery = ({ sources = [] }) => {
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [sources.length]);
+  }, [next, prev]);
 
   if (!sources.length) return null;
 
@@ -121,8 +124,8 @@ const FluidGallery = ({ sources = [] }) => {
         className="w-full h-full"
       >
         <Suspense fallback={null}>
-          {textures.map((tex, i) => (
-            <FluidSlide key={i} texture={tex} active={i === index} />
+          {sources.map((url, i) => (
+            <FluidSlide key={i} url={url} active={i === index} />
           ))}
         </Suspense>
         {/* Debug controls, à retirer en prod */}
