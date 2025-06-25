@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SpotifyMobileProject.css';
 import MasonryGallery from './MasonryGallery/MasonryGallery';
+import CircularGallery from './CircularGallery/CircularGallery';
 
 // Import de toutes les images Spotify Mobile
 import spotifyImg1 from '../photo/image &spotifyappmobile_0441.PNG';
@@ -82,6 +83,15 @@ const SpotifyMobileProject = () => {
     { name: 'GitHub', icon: 'devicon-github-original' }
   ];
 
+  const galleryItems = [
+    { image: spotifyImg1, title: 'Accueil', link: 'https://github.com/sidypr/stats-Spotify-mob' },
+    { image: spotifyImg2, title: 'Statistiques', link: 'https://github.com/sidypr/stats-Spotify-mob' },
+    { image: spotifyImg3, title: 'Playlists', link: 'https://github.com/sidypr/stats-Spotify-mob' },
+    { image: spotifyImg4, title: 'Recherche', link: 'https://github.com/sidypr/stats-Spotify-mob' },
+    { image: spotifyImg5, title: 'Profil', link: 'https://github.com/sidypr/stats-Spotify-mob' },
+    { image: spotifyImg6, title: 'Aide', link: 'https://github.com/sidypr/stats-Spotify-mob' }
+  ];
+
   return (
     <div className="spotify-mobile-project">
       <header className="project-header" style={{backgroundImage: `url(${headerImg})`}}>
@@ -109,32 +119,7 @@ const SpotifyMobileProject = () => {
 
         <section className="project-features">
           <h2>Fonctionnalités principales</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <h3>Authentification sécurisée</h3>
-              <p>Connexion OAuth2 avec Spotify, gestion des tokens d'accès et déconnexion avec nettoyage des données</p>
-            </div>
-            <div className="feature-card">
-              <h3>Navigation par onglets</h3>
-              <p>6 onglets : Accueil, Statistiques, Playlists, Recherche, Aide et Profil pour une navigation intuitive</p>
-            </div>
-            <div className="feature-card">
-              <h3>Gestion des playlists</h3>
-              <p>Affichage de toutes vos playlists Spotify avec barre de recherche, visualisation des titres et accès aux titres likés</p>
-            </div>
-            <div className="feature-card">
-              <h3>Recherche avancée</h3>
-              <p>Recherche multi-catégories (titres, artistes, albums) avec filtrage par onglets et historique des recherches</p>
-            </div>
-            <div className="feature-card">
-              <h3>Interface moderne</h3>
-              <p>Thème sombre inspiré de Spotify avec animations fluides et UX optimisée pour mobile</p>
-            </div>
-            <div className="feature-card">
-              <h3>Configuration iOS</h3>
-              <p>Application prête pour le développement et le déploiement mobile sur iOS</p>
-            </div>
-          </div>
+          <CircularGallery items={galleryItems} />
         </section>
 
         <section className="project-tech">

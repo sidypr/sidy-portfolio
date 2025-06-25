@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Projects.css';
 import mangastoreImg from '../photo/MANGASTORE.png';
 import pokedexImg from '../photo/POKEDEX.png';
 import spotifyImg from '../photo/API SPOTIFY.png';
 import spotifyMobileImg from '../photo/image &spotifyappmobile_0447.PNG';
 import portfolioImg from '../photo/PORTFOLIO.png';
+import CircularGallery from './CircularGallery/CircularGallery';
 
 const projects = [
   {
@@ -55,61 +55,20 @@ const projects = [
 ];
 
 const Projects = () => {
+  const galleryItems = projects.map((p)=>({
+    image:p.image,
+    title:p.title,
+    link:p.link,
+    isInternal:p.isInternal
+  }));
+
   return (
     <div className="projects-page">
       <header className="projects-header">
         <h1 className="projects-title">PROJETS</h1>
         <p className="projects-subtitle">Découvrez mes dernières réalisations</p>
       </header>
-      <div className="projects-gallery">
-        {projects.map((project, idx) => (
-          <div className="project-block" key={idx}>
-            {project.isInternal ? (
-              <Link to={project.link} className="project-card-link">
-                <div className="project-image-container">
-                  <img src={project.image} alt={project.title} className="project-image" />
-                </div>
-                <div className="project-info">
-                  <h2 className="project-block-title">{project.title}</h2>
-                  <p className="project-block-desc">{project.description}</p>
-                  {project.tags && (
-                    <div className="project-tags">
-                      {project.tags.map((tag, i) => (
-                        <span className="project-tag" key={i}>{tag}</span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </Link>
-            ) : (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-card-link">
-            <div className="project-image-container">
-              <img src={project.image} alt={project.title} className="project-image" />
-            </div>
-            <div className="project-info">
-              <h2 className="project-block-title">{project.title}</h2>
-              <p className="project-block-desc">{project.description}</p>
-              {project.tags && (
-                <div className="project-tags">
-                  {project.tags.map((tag, i) => (
-                    <span className="project-tag" key={i}>{tag}</span>
-                  ))}
-                </div>
-              )}
-                </div>
-              </a>
-            )}
-            <div className="project-links">
-              {project.externalLink && (
-                <a href={project.externalLink} className="project-link-btn secondary" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>Code source</a>
-              )}
-              {project.video && (
-                <a href={project.video} className="project-link-btn secondary video" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>Voir la vidéo</a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+      <CircularGallery items={galleryItems} radius={200} autoRotate={true} rotationSpeed={1} />
     </div>
   );
 };
