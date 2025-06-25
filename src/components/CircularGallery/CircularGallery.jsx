@@ -297,6 +297,7 @@ class App {
     this.createMedias(items, bend, textColor, borderRadius, font, itemScale, mediaHeightPx, mediaWidthPx);
     this.update();
     this.addEventListeners();
+    this.container.addEventListener('click', this.onClick.bind(this));
   }
 
   createRenderer() {
@@ -382,6 +383,20 @@ class App {
     const itemIndex = Math.round(Math.abs(this.scroll.target) / width);
     const item = width * itemIndex;
     this.scroll.target = this.scroll.target < 0 ? -item : item;
+  }
+
+  onClick(e) {
+    if (!this.medias || !this.medias[0]) return;
+    const width = this.medias[0].width;
+    const index = ((Math.round(Math.abs(this.scroll.current) / width)) % this.mediasImages.length);
+    const itemData = this.mediasImages[index];
+    if (!itemData || !itemData.link) return;
+    const isInternal = itemData.isInternal || (itemData.link && itemData.link.startsWith('/'));
+    if (isInternal) {
+      window.location.href = itemData.link;
+    } else {
+      window.open(itemData.link, '_blank');
+    }
   }
 
   /**************** RESIZE & RENDER *****************/
