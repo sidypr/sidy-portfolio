@@ -71,7 +71,9 @@ const Projects = () => {
       </header>
       <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
 
-      <div className="projects-gallery">
+      <p className="projects-intro">Tous les projets que j'ai créés cette année :</p>
+
+      <div className="projects-gallery" style={{ marginTop: '2.5rem' }}>
         {projects.map((project, index) => (
           project.isInternal ? (
             <Link key={index} to={project.link} className="project-card-link">
