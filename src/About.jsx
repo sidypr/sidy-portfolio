@@ -3,6 +3,30 @@ import './About.css';
 import sidyNoir from './photo/sidyNoir.jpeg';
 
 const About = () => {
+  const allSkills = [
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', name: 'HTML5' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', name: 'CSS3' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', name: 'JavaScript' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', name: 'Tailwind' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', name: 'TypeScript' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg', name: 'Bootstrap' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', name: 'PHP' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg', name: 'Symfony' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', name: 'MySQL' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', name: 'Node.js' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', name: 'Figma' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', name: 'Git' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', name: 'GitHub' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', name: 'VS Code' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React Native' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg', name: 'Expo' }
+  ];
+  const skillsGroups = [];
+  for (let i = 0; i < allSkills.length; i += 6) {
+    skillsGroups.push(allSkills.slice(i, i + 6));
+  }
+
   return (
     <div className="about-container fadeIn">
       <div className="about-content">
@@ -30,94 +54,16 @@ const About = () => {
               </div>
               <div className="card-content">
                 <div className="skills-grid">
-                  <div className="skill-category">
-                    <h4>Front-end</h4>
-                    <div className="tech-logos">
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-                        <span>HTML5</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-                        <span>CSS3</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                        <span>JavaScript</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-                        <span>React</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" />
-                        <span>Tailwind</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
-                        <span>TypeScript</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" />
-                        <span>Bootstrap</span>
-                      </div>
+                  {skillsGroups.map((group, i) => (
+                    <div className="skills-row" key={i}>
+                      {group.map((skill, j) => (
+                        <div className="tech-logo" key={j}>
+                          <img src={skill.icon} alt={skill.name} />
+                          <span>{skill.name}</span>
+                        </div>
+                      ))}
                     </div>
-                  </div>
-                  <div className="skill-category">
-                    <h4>Back-end</h4>
-                    <div className="tech-logos">
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
-                        <span>PHP</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony" />
-                        <span>Symfony</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
-                        <span>MySQL</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
-                        <span>Node.js</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-category">
-                    <h4>Outils & Design</h4>
-                    <div className="tech-logos">
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
-                        <span>Figma</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                        <span>Git</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
-                        <span>GitHub</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
-                        <span>VS Code</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-category">
-                    <h4>Mobile & Apps</h4>
-                    <div className="tech-logos">
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" />
-                        <span>React Native</span>
-                      </div>
-                      <div className="tech-logo">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg" alt="Expo" />
-                        <span>Expo</span>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

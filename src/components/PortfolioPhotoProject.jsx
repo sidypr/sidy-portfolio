@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PortfolioPhotoProject.css';
 import MasonryGallery from './MasonryGallery/MasonryGallery';
+import headerImg from '../photo/portfolio1.png';
 
 // Import des images portfolio
 import portfolio1 from '../photo/portfolio1.png';
@@ -87,7 +88,7 @@ const PortfolioPhotoProject = () => {
 
   return (
     <div className="portfolio-photo-project">
-      <div className="project-header">
+      <div className="project-header" style={{backgroundImage:`url(${headerImg})`}}>
         <div className="container">
           <Link to="/projects" className="back-link">← Retour aux projets</Link>
           <h1 className="project-title">📸 Portfolio Photo Symfony</h1>

@@ -7,12 +7,19 @@
 }
 
 .spotify-mobile-project .project-header {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 80px 0;
-  text-align: center;
-  margin-bottom: 60px;
-  max-width: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px 80px;
+  min-height: 75vh;
+}
+
+.spotify-mobile-project .project-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(2px);
 }
 
 .spotify-mobile-project .back-link {
@@ -28,14 +35,54 @@
   color: #fff;
 }
 
-.spotify-mobile-project .project-title-section { text-align: center; margin: 2rem 0; }
-.spotify-mobile-project .project-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; background: linear-gradient(45deg,#1db954,#1ed760); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.spotify-mobile-project .project-subtitle { font-size:1.3rem; color:rgba(255,255,255,0.9); margin-bottom:40px; }
+.spotify-mobile-project .project-title-section {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 2rem 0;
+}
 
-.spotify-mobile-project .project-main-links { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
-.spotify-mobile-project .project-link-btn { padding:0.8rem 2rem; border-radius:25px; font-weight:600; text-decoration:none; transition:all 0.3s ease; border:1px solid rgba(255,255,255,0.2);}
-.spotify-mobile-project .project-link-btn.primary{background:linear-gradient(45deg,#1db954,#1ed760);color:#fff;}
-.spotify-mobile-project .project-link-btn.primary:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(29,185,84,0.2);}
+.spotify-mobile-project .project-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg,#1db954,#1ed760);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.spotify-mobile-project .project-subtitle {
+  font-size:1.3rem;
+  color:rgba(255,255,255,0.9);
+  margin-bottom:40px;
+}
+
+.spotify-mobile-project .project-main-links {
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+
+.spotify-mobile-project .project-link-btn {
+  padding:0.8rem 2rem;
+  border-radius:25px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+.spotify-mobile-project .project-link-btn.primary{
+  background:linear-gradient(45deg,#1db954,#1ed760);
+  color:#fff;
+}
+
+.spotify-mobile-project .project-link-btn.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(29,185,84,0.2);
+}
 
 .project-content {
   max-width: 1200px;
@@ -402,4 +449,20 @@
   .modal-counter {
     bottom: 10px;
   }
+}
+
+.store-logo {
+  width: 140px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.store-logo:hover {
+  transform: scale(1.05);
+}
+
+.app-logos {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
 } 

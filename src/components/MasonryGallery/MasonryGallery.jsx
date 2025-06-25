@@ -7,20 +7,31 @@ const MasonryGallery = ({ images = [] }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const openModal = (index) => {
     setCurrentIndex(index);
     setSelectedImage(images[index]);
     setIsZoomed(false);
+    setIsFullscreen(true);
   };
 
   const closeModal = () => {
     setSelectedImage(null);
     setIsZoomed(false);
+    setIsFullscreen(false);
   };
 
   const toggleZoom = () => {
     setIsZoomed(!isZoomed);
+  };
+
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+  };
+
+  const handleImageClick = () => {
+    setIsFullscreen(!isFullscreen);
   };
 
   const navigateImage = (direction) => {
@@ -30,6 +41,7 @@ const MasonryGallery = ({ images = [] }) => {
     setCurrentIndex(newIndex);
     setSelectedImage(images[newIndex]);
     setIsZoomed(false);
+    setIsFullscreen(true);
   };
 
   // Gestion clavier
@@ -133,8 +145,8 @@ const MasonryGallery = ({ images = [] }) => {
             <img 
               src={selectedImage} 
               alt="Image sélectionnée" 
-              className={`masonry-modal-image ${isZoomed ? 'zoomed' : ''}`}
-              onClick={toggleZoom}
+              className={`masonry-modal-image ${isZoomed ? 'zoomed' : ''} ${isFullscreen ? 'fullscreen' : ''}`}
+              onClick={handleImageClick}
             />
             <button 
               className="masonry-modal-nav masonry-modal-next" 

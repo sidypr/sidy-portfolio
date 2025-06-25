@@ -4,7 +4,7 @@ import './Projects.css';
 import mangastoreImg from '../photo/MANGASTORE.png';
 import pokedexImg from '../photo/POKEDEX.png';
 import spotifyImg from '../photo/API SPOTIFY.png';
-import spotifyMobileImg from '../photo/image &spotifyappmobile_0441.PNG';
+import spotifyMobileImg from '../photo/image &spotifyappmobile_0447.PNG';
 import portfolioImg from '../photo/PORTFOLIO.png';
 
 const projects = [

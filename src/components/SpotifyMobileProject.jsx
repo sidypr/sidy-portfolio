@@ -18,6 +18,7 @@ import spotifyImg11 from '../photo/image &spotifyappmobile_0451.PNG';
 import spotifyImg12 from '../photo/image &spotifyappmobile_0452.PNG';
 import spotifyImg13 from '../photo/image &spotifyappmobile_0453.PNG';
 import spotifyImg14 from '../photo/image &spotifyappmobile_0454.PNG';
+import headerImg from '../photo/image &spotifyappmobile_0447.PNG';
 
 const SpotifyMobileProject = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -74,15 +75,16 @@ const SpotifyMobileProject = () => {
     { name: 'React Native', icon: 'devicon-react-original' },
     { name: 'Expo', icon: 'devicon-expo-original' },
     { name: 'TypeScript', icon: 'devicon-typescript-original' },
-    { name: 'JavaScript', icon: 'devicon-javascript-original' },
-    { name: 'Node.js', icon: 'devicon-nodejs-original' },
-    { name: 'Git', icon: 'devicon-git-original' },
+    { name: 'JavaScript', icon: 'devicon-javascript-plain' },
+    { name: 'Go', icon: 'devicon-go-original' },
+    { name: 'Node.js', icon: 'devicon-nodejs-plain' },
+    { name: 'Git', icon: 'devicon-git-plain' },
     { name: 'GitHub', icon: 'devicon-github-original' }
   ];
 
   return (
     <div className="spotify-mobile-project">
-      <header className="project-header">
+      <header className="project-header" style={{backgroundImage: `url(${headerImg})`}}>
         <Link to="/projects" className="back-link">← Retour aux projets</Link>
         <div className="project-title-section">
           <h1 className="project-title">Spotify Stats Mobile</h1>
@@ -196,39 +198,6 @@ const SpotifyMobileProject = () => {
             spotifyImg6, spotifyImg7, spotifyImg8, spotifyImg9, spotifyImg10,
             spotifyImg11, spotifyImg12, spotifyImg13, spotifyImg14
           ]} />
-        </section>
-
-        <section className="project-status">
-          <h2>État du projet</h2>
-          <div className="status-grid">
-            <div className="status-item completed">
-              <span className="status-icon">✅</span>
-              <span>Authentification fonctionnelle</span>
-            </div>
-            <div className="status-item completed">
-              <span className="status-icon">✅</span>
-              <span>Playlists avec recherche et titres likés</span>
-            </div>
-            <div className="status-item completed">
-              <span className="status-icon">✅</span>
-              <span>Recherche repositionnée</span>
-            </div>
-            <div className="status-item completed">
-              <span className="status-icon">✅</span>
-              <span>Interface moderne et responsive</span>
-            </div>
-            <div className="status-item completed">
-              <span className="status-icon">✅</span>
-              <span>Configuration iOS prête</span>
-            </div>
-            <div className="status-item completed">
-              <span className="status-icon">✅</span>
-              <span>Code publié sur GitHub</span>
-            </div>
-          </div>
-          <p className="status-conclusion">
-            L'application est <strong>prête pour le développement</strong> et le déploiement mobile !
-          </p>
         </section>
       </div>
 

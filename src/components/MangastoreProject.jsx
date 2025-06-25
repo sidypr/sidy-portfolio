@@ -11,6 +11,7 @@ import mangastore6 from '../photo/mangartore6.png';
 import mangastore7 from '../photo/mangastore7.png';
 import mangastore8 from '../photo/mangastore8.png';
 import mangastore9 from '../photo/mangastore9.png';
+import headerImg from '../photo/MANGASTORE.png';
 
 const MangastoreProject = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -83,7 +84,7 @@ const MangastoreProject = () => {
 
   return (
     <div className="mangastore-project">
-      <div className="project-header">
+      <div className="project-header" style={{backgroundImage:`url(${headerImg})`}}>
         <div className="container">
           <Link to="/projects" className="back-link">← Retour aux projets</Link>
           <h1 className="project-title">🛒 MangaStore</h1>
@@ -346,6 +347,7 @@ php bin/console doctrine:fixtures:load`}
               <div className="code-block">
                 <pre>
 {`# Compilation des assets
+
 npm run build
 
 # Démarrage du serveur Symfony
