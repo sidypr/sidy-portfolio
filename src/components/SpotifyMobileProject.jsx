@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SpotifyMobileProject.css';
 import MasonryGallery from './MasonryGallery/MasonryGallery';
-import CircularGallery from './CircularGallery/CircularGallery';
 
 // Import de toutes les images Spotify Mobile
 import spotifyImg1 from '../photo/image &spotifyappmobile_0441.PNG';
@@ -119,8 +118,6 @@ const SpotifyMobileProject = () => {
 
         <section className="project-features">
           <h2>Fonctionnalités principales</h2>
-          <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
-
           <div className="features-grid">
             {galleryItems.map((item, idx) => (
               <div key={idx} className="feature-card">
