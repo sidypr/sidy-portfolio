@@ -120,6 +120,15 @@ const SpotifyMobileProject = () => {
         <section className="project-features">
           <h2>Fonctionnalités principales</h2>
           <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
+
+          <div className="features-grid">
+            {galleryItems.map((item, idx) => (
+              <div key={idx} className="feature-card">
+                <h3>{item.title}</h3>
+                <p>Accédez à la section « {item.title} » dans l'application pour découvrir cette fonctionnalité.</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="project-tech">
