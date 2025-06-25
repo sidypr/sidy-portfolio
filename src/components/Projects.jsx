@@ -71,7 +71,7 @@ const Projects = () => {
       </header>
       <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
 
-      <p className="projects-intro">Tous les projets que j'ai créés cette année :</p>
+      <p className="projects-intro">Faites défiler la galerie interactive pour un aperçu rapide de mes réalisations de l'année, puis explorez les cartes ci-dessous pour découvrir chaque projet en détail.</p>
 
       <div className="projects-gallery" style={{ marginTop: '2.5rem' }}>
         {projects.map((project, index) => (
