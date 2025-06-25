@@ -154,6 +154,8 @@ class Media {
     borderRadius = 0,
     font,
     itemScale = 1,
+    mediaHeightPx = null,
+    mediaWidthPx = null,
   }) {
     this.extra = 0;
     this.geometry = geometry;
@@ -170,6 +172,8 @@ class Media {
     this.borderRadius = borderRadius;
     this.font = font;
     this.itemScale = itemScale;
+    this.mediaHeightPx = mediaHeightPx;
+    this.mediaWidthPx = mediaWidthPx;
 
     this.createShader();
     this.createMesh();
@@ -200,6 +204,7 @@ class Media {
     img.onload = () => {
       tex.image = img;
       this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
+      this.aspect = img.naturalWidth / img.naturalHeight;
     };
   }
 
@@ -257,8 +262,15 @@ class Media {
     if (viewport) this.viewport = viewport;
 
     this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height * this.itemScale;
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width * this.itemScale;
+    if (this.mediaHeightPx) {
+      this.plane.scale.y = this.viewport.height * (this.mediaHeightPx / this.screen.height);
+      const aspect = this.aspect || 1.064;
+      const targetWidthPx = this.mediaWidthPx || this.mediaHeightPx * aspect;
+      this.plane.scale.x = this.viewport.width * (targetWidthPx / this.screen.width);
+    } else {
+      this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height * this.itemScale;
+      this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width * this.itemScale;
+    }
 
     this.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
 
@@ -271,7 +283,7 @@ class Media {
 
 /*********************** APP ************************/ 
 class App {
-  constructor(container, { items, bend, textColor = '#ffffff', borderRadius = 0, font = 'bold 30px Figtree', itemScale = 1 } = {}) {
+  constructor(container, { items, bend, textColor = '#ffffff', borderRadius = 0, font = 'bold 30px Figtree', itemScale = 1, mediaHeightPx = null, mediaWidthPx = null } = {}) {
     document.documentElement.classList.remove('no-js');
     this.container = container;
     this.scroll = { ease: 0.05, current: 0, target: 0, last: 0 };
@@ -282,7 +294,7 @@ class App {
     this.createScene();
     this.onResize();
     this.createGeometry();
-    this.createMedias(items, bend, textColor, borderRadius, font, itemScale);
+    this.createMedias(items, bend, textColor, borderRadius, font, itemScale, mediaHeightPx, mediaWidthPx);
     this.update();
     this.addEventListeners();
   }
@@ -308,7 +320,7 @@ class App {
     this.planeGeometry = new Plane(this.gl, { heightSegments: 50, widthSegments: 100 });
   }
 
-  createMedias(items, bend = 1, textColor, borderRadius, font, itemScale = 1) {
+  createMedias(items, bend = 1, textColor, borderRadius, font, itemScale = 1, mediaHeightPx, mediaWidthPx) {
     const defaultItems = [
       { image: 'https://picsum.photos/seed/1/800/600?grayscale', text: 'Bridge' },
       { image: 'https://picsum.photos/seed/2/800/600?grayscale', text: 'Desk Setup' },
@@ -338,6 +350,8 @@ class App {
         borderRadius,
         font,
         itemScale,
+        mediaHeightPx,
+        mediaWidthPx,
       }),
     );
   }
@@ -428,12 +442,12 @@ class App {
 }
 
 /*********************** REACT COMPONENT ************************/ 
-export default function CircularGallery({ items, bend = 3, textColor = '#ffffff', borderRadius = 0.05, font = 'bold 30px Figtree', itemScale = 2 }) {
+export default function CircularGallery({ items, bend = 3, textColor = '#ffffff', borderRadius = 0.05, font = 'bold 30px Figtree', itemScale = 1.8, mediaHeightPx = 498, mediaWidthPx = 530 }) {
   const containerRef = useRef(null);
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, itemScale });
+    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, itemScale, mediaHeightPx, mediaWidthPx });
     return () => app.destroy();
-  }, [items, bend, textColor, borderRadius, font, itemScale]);
+  }, [items, bend, textColor, borderRadius, font, itemScale, mediaHeightPx, mediaWidthPx]);
 
   return <div className="circular-gallery" ref={containerRef} />;
 } 

@@ -119,7 +119,7 @@ const SpotifyMobileProject = () => {
 
         <section className="project-features">
           <h2>Fonctionnalités principales</h2>
-          <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={1.8} />
+          <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
         </section>
 
         <section className="project-tech">
