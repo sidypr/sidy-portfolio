@@ -68,7 +68,7 @@ const Projects = () => {
         <h1 className="projects-title">PROJETS</h1>
         <p className="projects-subtitle">Découvrez mes dernières réalisations</p>
       </header>
-      <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} />
+      <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={3} />
     </div>
   );
 };

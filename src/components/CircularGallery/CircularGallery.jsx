@@ -139,7 +139,22 @@ class Title {
 
 /*********************** MEDIA ************************/ 
 class Media {
-  constructor({ geometry, gl, image, index, length, scene, screen, text, viewport, bend, textColor, borderRadius = 0, font }) {
+  constructor({
+    geometry,
+    gl,
+    image,
+    index,
+    length,
+    scene,
+    screen,
+    text,
+    viewport,
+    bend,
+    textColor,
+    borderRadius = 0,
+    font,
+    itemScale = 1,
+  }) {
     this.extra = 0;
     this.geometry = geometry;
     this.gl = gl;
@@ -154,6 +169,7 @@ class Media {
     this.textColor = textColor;
     this.borderRadius = borderRadius;
     this.font = font;
+    this.itemScale = itemScale;
 
     this.createShader();
     this.createMesh();
@@ -241,8 +257,8 @@ class Media {
     if (viewport) this.viewport = viewport;
 
     this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
+    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height * this.itemScale;
+    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width * this.itemScale;
 
     this.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
 
@@ -255,7 +271,7 @@ class Media {
 
 /*********************** APP ************************/ 
 class App {
-  constructor(container, { items, bend, textColor = '#ffffff', borderRadius = 0, font = 'bold 30px Figtree' } = {}) {
+  constructor(container, { items, bend, textColor = '#ffffff', borderRadius = 0, font = 'bold 30px Figtree', itemScale = 1 } = {}) {
     document.documentElement.classList.remove('no-js');
     this.container = container;
     this.scroll = { ease: 0.05, current: 0, target: 0, last: 0 };
@@ -266,7 +282,7 @@ class App {
     this.createScene();
     this.onResize();
     this.createGeometry();
-    this.createMedias(items, bend, textColor, borderRadius, font);
+    this.createMedias(items, bend, textColor, borderRadius, font, itemScale);
     this.update();
     this.addEventListeners();
   }
@@ -292,7 +308,7 @@ class App {
     this.planeGeometry = new Plane(this.gl, { heightSegments: 50, widthSegments: 100 });
   }
 
-  createMedias(items, bend = 1, textColor, borderRadius, font) {
+  createMedias(items, bend = 1, textColor, borderRadius, font, itemScale = 1) {
     const defaultItems = [
       { image: 'https://picsum.photos/seed/1/800/600?grayscale', text: 'Bridge' },
       { image: 'https://picsum.photos/seed/2/800/600?grayscale', text: 'Desk Setup' },
@@ -321,6 +337,7 @@ class App {
         textColor,
         borderRadius,
         font,
+        itemScale,
       }),
     );
   }
@@ -411,12 +428,12 @@ class App {
 }
 
 /*********************** REACT COMPONENT ************************/ 
-export default function CircularGallery({ items, bend = 3, textColor = '#ffffff', borderRadius = 0.05, font = 'bold 30px Figtree' }) {
+export default function CircularGallery({ items, bend = 3, textColor = '#ffffff', borderRadius = 0.05, font = 'bold 30px Figtree', itemScale = 2 }) {
   const containerRef = useRef(null);
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font });
+    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, itemScale });
     return () => app.destroy();
-  }, [items, bend, textColor, borderRadius, font]);
+  }, [items, bend, textColor, borderRadius, font, itemScale]);
 
   return <div className="circular-gallery" ref={containerRef} />;
 } 
