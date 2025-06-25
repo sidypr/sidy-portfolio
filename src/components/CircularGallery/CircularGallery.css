@@ -1,0 +1,17 @@
+.circular-gallery-wrapper{
+  perspective:1000px;
+}
+
+.circular-gallery{
+  width: 100%;
+  height: 80vh; /* occupe 80% de la hauteur viewport */
+  transition: transform 0.3s linear;
+}
+
+.circular-item img{
+  transition:transform 0.3s ease;
+}
+
+.circular-item:hover img{
+  transform:scale(1.1);
+} 
