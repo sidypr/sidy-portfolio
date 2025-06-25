@@ -6,6 +6,7 @@ import spotifyImg from '../photo/API SPOTIFY.png';
 import spotifyMobileImg from '../photo/image &spotifyappmobile_0447.PNG';
 import portfolioImg from '../photo/PORTFOLIO.png';
 import CircularGallery from './CircularGallery/CircularGallery';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
@@ -69,6 +70,36 @@ const Projects = () => {
         <p className="projects-subtitle">Découvrez mes dernières réalisations</p>
       </header>
       <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
+
+      <div className="projects-gallery">
+        {projects.map((project, index) => (
+          project.isInternal ? (
+            <Link key={index} to={project.link} className="project-card-link">
+              <div className="project-block">
+                <div className="project-image-container">
+                  <img src={project.image} alt={project.title} className="project-image" />
+                </div>
+                <div className="project-info">
+                  <h3 className="project-block-title">{project.title}</h3>
+                  <p className="project-block-desc">{project.description}</p>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="project-card-link">
+              <div className="project-block">
+                <div className="project-image-container">
+                  <img src={project.image} alt={project.title} className="project-image" />
+                </div>
+                <div className="project-info">
+                  <h3 className="project-block-title">{project.title}</h3>
+                  <p className="project-block-desc">{project.description}</p>
+                </div>
+              </div>
+            </a>
+          )
+        ))}
+      </div>
     </div>
   );
 };
