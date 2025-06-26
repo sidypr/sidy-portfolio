@@ -13,7 +13,7 @@
 
 .home-content {
   text-align: center;
-  z-index: 10;
+  z-index: 1;
   padding: 2rem;
   max-width: 800px;
   margin: auto;
@@ -105,4 +105,14 @@
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+.spline-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
 } 
