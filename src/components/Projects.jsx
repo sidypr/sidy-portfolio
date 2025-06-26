@@ -71,10 +71,10 @@ const Projects = () => {
       </header>
       <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
 
-      <p className="projects-intro">
+      <div className="text-block">
         Découvrez en un clin d'œil mes projets phares de l'année grâce à la galerie interactive ci-dessus.<br/>
         Faites défiler, puis plongez dans chaque réalisation via les cartes détaillées ci-dessous pour explorer mon univers créatif et technique.
-      </p>
+      </div>
 
       <h2 className="projects-cards-title">Projets détaillés</h2>
 
