@@ -7,12 +7,14 @@ import ContactForm from './ContactForm';
 import MangastoreProject from './components/MangastoreProject';
 import PortfolioPhotoProject from './components/PortfolioPhotoProject';
 import SpotifyMobileProject from './components/SpotifyMobileProject';
+import TextScrambleEffect from './TextScrambleEffect';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="app-container">
+        <TextScrambleEffect />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
