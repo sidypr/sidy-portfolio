@@ -72,11 +72,11 @@ const Projects = () => {
       <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
 
       <p className="projects-intro">
-        <strong>Bienvenue dans mon univers créatif&nbsp;!</strong><br/>
-        Plongez dans la galerie immersive ci-dessus pour survoler mes plus beaux projets réalisés cette année.<br/>
-        Cliquez sur une image pour voyager au cœur de chaque réalisation, ou parcourez les cartes ci-dessous pour explorer plus en profondeur les coulisses, les défis et les technologies qui m'ont inspiré.<br/>
-        <em>Bonne visite&nbsp;!</em>
+        Découvrez en un clin d'œil mes projets phares de l'année grâce à la galerie interactive ci-dessus.<br/>
+        Faites défiler, puis plongez dans chaque réalisation via les cartes détaillées ci-dessous pour explorer mon univers créatif et technique.
       </p>
+
+      <h2 className="projects-cards-title">Projets détaillés</h2>
 
       <div className="projects-gallery" style={{ marginTop: '2.5rem' }}>
         {projects.map((project, index) => (
