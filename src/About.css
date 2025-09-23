@@ -313,22 +313,3 @@
   width: 32px;
   height: 32px;
 }
-
-/* Skills container pour LogoLoop */
-.skills-container {
-  height: 80px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 16px;
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .skills-container {
-    height: 60px;
-    padding: 12px;
-  }
-}

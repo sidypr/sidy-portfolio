@@ -1,45 +1,31 @@
 import React from 'react';
 import './About.css';
 import sidyNoir from './photo/sidyNoir.jpeg';
-import LogoLoop from './components/LogoLoop';
-import { 
-  SiHtml5, 
-  SiCss3, 
-  SiJavascript, 
-  SiReact, 
-  SiTailwindcss, 
-  SiTypescript, 
-  SiBootstrap, 
-  SiPhp, 
-  SiSymfony, 
-  SiMysql, 
-  SiNodedotjs, 
-  SiFigma, 
-  SiGit, 
-  SiGithub, 
-  SiExpo 
-} from 'react-icons/si';
-import { VscCode } from 'react-icons/vsc';
 
 const About = () => {
-  const techLogos = [
-    { node: <SiHtml5 />, title: "HTML5" },
-    { node: <SiCss3 />, title: "CSS3" },
-    { node: <SiJavascript />, title: "JavaScript" },
-    { node: <SiReact />, title: "React" },
-    { node: <SiTailwindcss />, title: "Tailwind CSS" },
-    { node: <SiTypescript />, title: "TypeScript" },
-    { node: <SiBootstrap />, title: "Bootstrap" },
-    { node: <SiPhp />, title: "PHP" },
-    { node: <SiSymfony />, title: "Symfony" },
-    { node: <SiMysql />, title: "MySQL" },
-    { node: <SiNodedotjs />, title: "Node.js" },
-    { node: <SiFigma />, title: "Figma" },
-    { node: <SiGit />, title: "Git" },
-    { node: <SiGithub />, title: "GitHub" },
-    { node: <VscCode />, title: "VS Code" },
-    { node: <SiExpo />, title: "Expo" }
+  const allSkills = [
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', name: 'HTML5' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', name: 'CSS3' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', name: 'JavaScript' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', name: 'Tailwind' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', name: 'TypeScript' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg', name: 'Bootstrap' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', name: 'PHP' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg', name: 'Symfony' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', name: 'MySQL' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', name: 'Node.js' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', name: 'Figma' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', name: 'Git' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', name: 'GitHub' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', name: 'VS Code' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React Native' },
+    { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg', name: 'Expo' }
   ];
+  const skillsGroups = [];
+  for (let i = 0; i < allSkills.length; i += 6) {
+    skillsGroups.push(allSkills.slice(i, i + 6));
+  }
 
   return (
     <div className="about-container fadeIn">
@@ -67,19 +53,17 @@ const About = () => {
                 <h3>Compétences Techniques</h3>
               </div>
               <div className="card-content">
-                <div className="skills-container">
-                  <LogoLoop
-                    logos={techLogos}
-                    speed={80}
-                    direction="left"
-                    logoHeight={48}
-                    gap={40}
-                    pauseOnHover
-                    scaleOnHover
-                    fadeOut
-                    fadeOutColor="#000000"
-                    ariaLabel="Technologies et compétences"
-                  />
+                <div className="skills-grid">
+                  {skillsGroups.map((group, i) => (
+                    <div className="skills-row" key={i}>
+                      {group.map((skill, j) => (
+                        <div className="tech-logo" key={j}>
+                          <img src={skill.icon} alt={skill.name} />
+                          <span>{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
