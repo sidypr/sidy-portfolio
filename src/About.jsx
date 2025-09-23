@@ -31,7 +31,7 @@ const About = () => {
     <div className="about-container fadeIn">
       <div className="about-content">
         <div className="about-text">
-          <h1 className="about-title" style={{fontFamily: '"Cormorant Garamond", serif'}}>À Propos</h1>
+          <h1 className="about-title">À Propos</h1>
           <div className="about-cards">
             <div className="about-card fadeInUp">
               <div className="card-header">

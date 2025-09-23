@@ -43,8 +43,9 @@
 }
 
 .spotify-mobile-project .project-title {
+  font-family: 'Inter Tight', sans-serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 20px;
   background: linear-gradient(45deg,#1db954,#1ed760);
   -webkit-background-clip:text;
