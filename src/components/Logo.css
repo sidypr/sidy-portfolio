@@ -1,0 +1,25 @@
+.logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-text-fallback {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .logo-text-fallback {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+}
