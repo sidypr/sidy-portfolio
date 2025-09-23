@@ -20,6 +20,28 @@
   height: 100%;
 }
 
+.navbar-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-location {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+.navbar-email {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-email:hover {
+  opacity: 0.8;
+}
+
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -175,8 +197,12 @@
     display: block;
   }
   
-  .navbar-logo {
+  .navbar-info {
     max-width: 70%;
+  }
+  
+  .navbar-logo {
+    display: none;
   }
 }
 
@@ -369,8 +395,11 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
+  .navbar-location, .navbar-email {
+    font-size: 0.8rem;
+  }
 }
 
-.navbar, .navbar-links li a, .navbar-mobile-links li a {
+.navbar, .navbar-links li a, .navbar-mobile-links li a, .navbar-email, .navbar-location {
   font-family: 'Cormorant Garamond', serif !important;
 } 

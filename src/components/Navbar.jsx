@@ -22,6 +22,10 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar-container">
+        <div className="navbar-info">
+          <span className="navbar-location">Basé à Paris, France</span>
+          <a href="mailto:sidy.djimbira@gmail.com" className="navbar-email">sidy.djimbira@gmail.com</a>
+        </div>
         <div className="navbar-logo">
           <Logo width="180px" height="50px" />
         </div>
