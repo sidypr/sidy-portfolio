@@ -5,7 +5,7 @@ import pokedexImg from '../photo/POKEDEX.png';
 import spotifyImg from '../photo/API SPOTIFY.png';
 import spotifyMobileImg from '../photo/image &spotifyappmobile_0447.PNG';
 import portfolioImg from '../photo/PORTFOLIO.png';
-import CircularGallery from './CircularGallery/CircularGallery';
+import DomeGallery from '../DomeGallery';
 import { Link } from 'react-router-dom';
 
 const projects = [
@@ -56,11 +56,9 @@ const projects = [
 ];
 
 const Projects = () => {
-  const galleryItems = projects.map((p)=>({
-    image:p.image,
-    title:p.title,
-    link:p.link,
-    isInternal:p.isInternal
+  const galleryItems = projects.map((p) => ({
+    src: p.image,
+    alt: p.title,
   }));
 
   return (
@@ -69,12 +67,14 @@ const Projects = () => {
         <h1 className="projects-title">PROJETS</h1>
         <p className="projects-subtitle">Découvrez mes dernières réalisations</p>
       </header>
-      <CircularGallery items={galleryItems} bend={2} borderRadius={0.09} itemScale={null} mediaHeightPx={498} mediaWidthPx={530} />
+      <div style={{ width: '100vw', height: '100vh' }}>
+        <DomeGallery images={galleryItems} />
+      </div>
 
-      <div className="text-block">
+      <p className="projects-intro">
         Découvrez en un clin d'œil mes projets phares de l'année grâce à la galerie interactive ci-dessus.<br/>
         Faites défiler, puis plongez dans chaque réalisation via les cartes détaillées ci-dessous pour explorer mon univers créatif et technique.
-      </div>
+      </p>
 
       <h2 className="projects-cards-title">Projets détaillés</h2>
 
