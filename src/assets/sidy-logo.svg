@@ -1,14 +1,17 @@
-<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+<svg width="500" height="150" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .logo-text {
-        font-family: 'Cormorant Garamond', serif;
-        font-weight: 700;
-        font-size: 48px;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 900;
+        font-size: 56px;
         fill: #000000;
         text-anchor: middle;
+        letter-spacing: 4px;
+        text-transform: uppercase;
       }
     </style>
   </defs>
-  <text x="200" y="70" class="logo-text">SIDY DJIMBIRA</text>
+  <rect width="500" height="150" fill="#ffffff"/>
+  <text x="250" y="90" class="logo-text">SIDY DJIMBIRA</text>
 </svg>

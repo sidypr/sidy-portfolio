@@ -3,9 +3,9 @@ import MetallicPaint, { parseLogoImage } from './MetallicPaint';
 import logo from '../assets/sidy-logo.svg';
 import './Logo.css';
 
-const Logo = ({ width = '200px', height = '60px' }) => {
+const Logo = ({ width = '250px', height = '75px' }) => {
   const [imageData, setImageData] = useState(null);
-  const [useFallback, setUseFallback] = useState(true); // Commencer par le fallback
+  const [useFallback, setUseFallback] = useState(false);
 
   useEffect(() => {
     async function loadLogoImage() {
@@ -17,6 +17,7 @@ const Logo = ({ width = '200px', height = '60px' }) => {
         const parsedData = await parseLogoImage(file);
         if (parsedData?.imageData) {
           setImageData(parsedData.imageData);
+          setUseFallback(false);
         } else {
           setUseFallback(true);
         }
@@ -33,7 +34,7 @@ const Logo = ({ width = '200px', height = '60px' }) => {
   if (useFallback || !imageData) {
     return (
       <div className="logo-fallback" style={{ width, height }}>
-        <svg width="100%" height="100%" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" height="100%" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#ff6b6b" />
@@ -42,8 +43,8 @@ const Logo = ({ width = '200px', height = '60px' }) => {
             </linearGradient>
           </defs>
           <text 
-            x="200" 
-            y="70" 
+            x="250" 
+            y="90" 
             className="logo-text-fallback"
             fill="url(#logoGradient)"
           >

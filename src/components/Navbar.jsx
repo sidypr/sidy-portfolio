@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import LogoSimple from './LogoSimple';
+import Logo from './Logo';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
           <a href="mailto:sidy.djimbira@gmail.com" className="navbar-email">sidy.djimbira@gmail.com</a>
         </div>
         <div className="navbar-logo">
-          <LogoSimple width="180px" height="50px" />
+          <Logo width="250px" height="75px" />
         </div>
         <nav className="navbar-nav">
           <ul className="navbar-links">
