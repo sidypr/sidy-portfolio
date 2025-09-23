@@ -1,0 +1,14 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 700;
+        font-size: 48px;
+        fill: #000000;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  <text x="200" y="70" class="logo-text">SIDY DJIMBIRA</text>
+</svg>

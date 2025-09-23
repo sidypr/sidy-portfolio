@@ -7,14 +7,12 @@ import ContactForm from './ContactForm';
 import MangastoreProject from './components/MangastoreProject';
 import PortfolioPhotoProject from './components/PortfolioPhotoProject';
 import SpotifyMobileProject from './components/SpotifyMobileProject';
-import CursorLogoMetallic from './components/CursorLogoMetallic';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="app-container">
-        <CursorLogoMetallic />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
