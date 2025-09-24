@@ -56,10 +56,37 @@ const projects = [
 ];
 
 const Projects = () => {
-  const galleryItems = projects.map((p) => ({
+  // Images principales des projets
+  const mainProjectImages = projects.map((p) => ({
     src: p.image,
     alt: p.title,
   }));
+
+  // Images supplémentaires pour enrichir la galerie
+  const additionalImages = [
+    { src: require('../photo/portfolio1.png'), alt: 'Portfolio Photo - Interface' },
+    { src: require('../photo/portfolio2.png'), alt: 'Portfolio Photo - Galerie' },
+    { src: require('../photo/portfolio3.png'), alt: 'Portfolio Photo - Design' },
+    { src: require('../photo/mangastore1.png'), alt: 'MangaStore - Interface' },
+    { src: require('../photo/mangastore2.png'), alt: 'MangaStore - Produits' },
+    { src: require('../photo/mangastore3.png'), alt: 'MangaStore - Panier' },
+    { src: require('../photo/image &spotifyappmobile_0441.PNG'), alt: 'Spotify Mobile - Écran 1' },
+    { src: require('../photo/image &spotifyappmobile_0442.PNG'), alt: 'Spotify Mobile - Écran 2' },
+    { src: require('../photo/image &spotifyappmobile_0443.PNG'), alt: 'Spotify Mobile - Écran 3' },
+    { src: require('../photo/image &spotifyappmobile_0444.PNG'), alt: 'Spotify Mobile - Écran 4' },
+    { src: require('../photo/image &spotifyappmobile_0445.PNG'), alt: 'Spotify Mobile - Écran 5' },
+    { src: require('../photo/image &spotifyappmobile_0446.PNG'), alt: 'Spotify Mobile - Écran 6' },
+    { src: require('../photo/image &spotifyappmobile_0448.PNG'), alt: 'Spotify Mobile - Écran 7' },
+    { src: require('../photo/image &spotifyappmobile_0449.PNG'), alt: 'Spotify Mobile - Écran 8' },
+    { src: require('../photo/image &spotifyappmobile_0450.PNG'), alt: 'Spotify Mobile - Écran 9' },
+    { src: require('../photo/image &spotifyappmobile_0451.PNG'), alt: 'Spotify Mobile - Écran 10' },
+    { src: require('../photo/image &spotifyappmobile_0452.PNG'), alt: 'Spotify Mobile - Écran 11' },
+    { src: require('../photo/image &spotifyappmobile_0453.PNG'), alt: 'Spotify Mobile - Écran 12' },
+    { src: require('../photo/image &spotifyappmobile_0454.PNG'), alt: 'Spotify Mobile - Écran 13' },
+  ];
+
+  // Combiner toutes les images
+  const galleryItems = [...mainProjectImages, ...additionalImages];
 
   return (
     <div className="projects-page">
@@ -67,7 +94,7 @@ const Projects = () => {
         <h1 className="projects-title">PROJETS</h1>
         <p className="projects-subtitle">Découvrez mes dernières réalisations</p>
       </header>
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <div style={{ width: '100vw', height: '60vh' }}>
         <DomeGallery images={galleryItems} />
       </div>
 
