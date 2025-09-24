@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
 }
 
 .lightning-background {
@@ -25,7 +26,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 0 2rem;
-  color: #fff;
+  color: #000;
   transform: translateY(20vh);
 }
 
@@ -57,16 +58,16 @@
 
 .cta-button {
   padding: 0.9rem 1.6rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: #000;
   color: #fff;
   text-decoration: none;
   border-radius: 28px;
   transition: all 0.25s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #000;
   font-size: 1rem;
 }
 
-.cta-button:hover { transform: translateY(-3px); background: rgba(255,255,255,0.2); }
+.cta-button:hover { transform: translateY(-3px); background: #333; }
 
 @media (max-width: 768px) {
   .home-title { font-size: 2.6rem; }

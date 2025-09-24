@@ -27,6 +27,7 @@ const Navbar = () => {
         </div>
         <nav className="navbar-nav">
           <ul className="navbar-links">
+            <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Accueil</Link></li>
             <li><Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>Projets</Link></li>
             <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>À propos</Link></li>
             <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
@@ -42,6 +43,7 @@ const Navbar = () => {
       </div>
       <div className={`navbar-mobile ${isOpen ? 'open' : ''}`}>
         <ul className="navbar-mobile-links">
+          <li><Link to="/" onClick={toggleMenu}>Accueil</Link></li>
           <li><Link to="/projects" onClick={toggleMenu}>Projets</Link></li>
           <li><Link to="/about" onClick={toggleMenu}>À propos</Link></li>
           <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
