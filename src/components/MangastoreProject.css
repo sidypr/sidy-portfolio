@@ -46,9 +46,8 @@
 .project-header .container{position:relative;z-index:2;}
 
 .project-title {
-  font-family: 'Inter Tight', sans-serif;
   font-size: 3.5rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 20px;
   color: #fff;
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);

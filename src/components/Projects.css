@@ -16,8 +16,7 @@
 
 .projects-title {
   font-size: 3rem;
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
   letter-spacing: 0.05em;
   color: #ffffff;
   margin-bottom: 0.5rem;
@@ -29,8 +28,7 @@
   font-size: 1.2rem;
   color: #cccccc;
   margin-bottom: 2rem;
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 300;
+  font-family: 'Inter', sans-serif;
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.4s forwards;
 }
@@ -106,8 +104,7 @@
 .project-block-title {
   font-size: 1.4rem;
   color: #222;
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
   margin-bottom: 0.5rem;
 }
 
@@ -261,8 +258,7 @@
   font-size: 2rem;
   margin-top: 3.5rem;
   margin-bottom: 1.5rem;
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
   letter-spacing: 0.04em;
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.7s forwards;

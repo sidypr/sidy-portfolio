@@ -30,17 +30,15 @@
 }
 
 .home-title {
-  font-family: 'Inter Tight', sans-serif;
   font-size: 3.5rem;
-  font-weight: 400;
+  font-weight: 800;
   margin: 0 0 0.5rem;
   letter-spacing: -0.02em;
 }
 
 .home-subtitle {
-  font-family: 'Inter Tight', sans-serif;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 500;
   opacity: 0.9;
   margin: 0 0 1rem;
 }
