@@ -1,0 +1,328 @@
+.horizontal-about {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.slides-container {
+  display: flex;
+  width: 400vw; /* 4 slides × 100vw */
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.slide-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.slide-header h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(45deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slide-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Slide 1 - Présentation */
+.presentation-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.image-content img:hover {
+  filter: grayscale(0%);
+}
+
+/* Slide 2 - Compétences Techniques */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.skill-category h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.skill-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Slide 3 - Autres Compétences */
+.other-skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.skill-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Slide 4 - Objectif Professionnel */
+.objective-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.objective-content h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.objective-content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.contact-item {
+  font-size: 1.1rem;
+  color: #ffffff;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+/* Indicateurs */
+.slide-indicators {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.indicator:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Compteur */
+.slide-counter {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .slide {
+    padding: 60px 40px;
+  }
+  
+  .slide-header h1 {
+    font-size: 2.8rem;
+  }
+  
+  .presentation-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .other-skills {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    padding: 40px 20px;
+  }
+  
+  .slide-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .text-content h2,
+  .objective-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .text-content p,
+  .objective-content p {
+    font-size: 1rem;
+  }
+  
+  .other-skills {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .skill-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .slide-counter {
+    top: 20px;
+    right: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .slide-indicators {
+    bottom: 20px;
+  }
+}

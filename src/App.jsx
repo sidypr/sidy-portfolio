@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './Home';
-import About from './About';
+import HorizontalAbout from './components/HorizontalAbout';
 import Projects from './components/Projects';
 import ContactForm from './ContactForm';
 import MangastoreProject from './components/MangastoreProject';
@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<HorizontalAbout />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/spotify-mobile" element={<SpotifyMobileProject />} />
           <Route path="/projects/mangastore" element={<MangastoreProject />} />

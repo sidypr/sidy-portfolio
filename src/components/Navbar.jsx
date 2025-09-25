@@ -25,9 +25,6 @@ const Navbar = () => {
           <span className="navbar-location">Basé à Paris, France</span>
           <a href="mailto:sidy.djimbira@gmail.com" className="navbar-email">sidy.djimbira@gmail.com</a>
         </div>
-        <div className="navbar-logo">
-          <h1 className="navbar-logo-text">SIDY DJIMBIRA</h1>
-        </div>
         <nav className="navbar-nav">
           <ul className="navbar-links">
             <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Accueil</Link></li>
