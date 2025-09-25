@@ -197,32 +197,32 @@ const PortfolioPhotoProject = () => {
           <h2>Fonctionnalités principales</h2>
           <div className="features-grid">
             <div className="feature">
-              <div className="feature-icon">HOME</div>
+              <div className="feature-icon"><i className="fas fa-home"></i></div>
               <h4>Page d'accueil</h4>
               <p>Présentation avec photos vedettes et photo d'arrière-plan</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">GALLERY</div>
+              <div className="feature-icon"><i className="fas fa-images"></i></div>
               <h4>Galerie interactive</h4>
               <p>Affichage de toutes les photos avec filtrage par catégorie</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">ABOUT</div>
+              <div className="feature-icon"><i className="fas fa-user"></i></div>
               <h4>Page À propos</h4>
               <p>Présentation du photographe, son histoire et son équipe</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">CONTACT</div>
+              <div className="feature-icon"><i className="fas fa-envelope"></i></div>
               <h4>Page Contact</h4>
               <p>Informations de contact et heures d'ouverture</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">ADMIN</div>
+              <div className="feature-icon"><i className="fas fa-cog"></i></div>
               <h4>Administration</h4>
               <p>Dashboard avec statistiques et gestion complète</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">RESP</div>
+              <div className="feature-icon"><i className="fas fa-mobile-alt"></i></div>
               <h4>Design responsive</h4>
               <p>Compatible mobile, tablette et desktop</p>
             </div>

@@ -78,32 +78,32 @@ const HorizontalAbout = () => {
         <div className="slide-content">
           <div className="other-skills">
             <div className="skill-card">
-              <div className="skill-icon">WEB</div>
+              <div className="skill-icon"><i className="fas fa-globe"></i></div>
               <h3>Création de sites web</h3>
               <p>Développement complet de A à Z</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">HOST</div>
+              <div className="skill-icon"><i className="fas fa-rocket"></i></div>
               <h3>Mise en ligne</h3>
               <p>Hébergement et déploiement de projets</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">RESP</div>
+              <div className="skill-icon"><i className="fas fa-mobile-alt"></i></div>
               <h3>Responsive Design</h3>
               <p>Optimisation pour tous les appareils</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">A11Y</div>
+              <div className="skill-icon"><i className="fas fa-universal-access"></i></div>
               <h3>Accessibilité</h3>
               <p>Standards WCAG et bonnes pratiques</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">UI</div>
+              <div className="skill-icon"><i className="fas fa-paint-brush"></i></div>
               <h3>Intégration</h3>
               <p>Transformation de maquettes en code</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">PERF</div>
+              <div className="skill-icon"><i className="fas fa-tachometer-alt"></i></div>
               <h3>Performance</h3>
               <p>Optimisation et méthodologie agile</p>
             </div>

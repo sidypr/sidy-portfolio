@@ -271,32 +271,32 @@ const MangastoreProject = () => {
           <h2>Fonctionnalités principales</h2>
           <div className="features-grid">
             <div className="feature">
-              <div className="feature-icon">SHOP</div>
+              <div className="feature-icon"><i className="fas fa-shopping-cart"></i></div>
               <h4>E-commerce complet</h4>
               <p>Catalogue de produits, panier, commandes et gestion des stocks en temps réel</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">PAY</div>
+              <div className="feature-icon"><i className="fas fa-credit-card"></i></div>
               <h4>Paiement sécurisé</h4>
               <p>Intégration Stripe pour des transactions sécurisées avec cartes bancaires</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">USER</div>
+              <div className="feature-icon"><i className="fas fa-user"></i></div>
               <h4>Gestion utilisateurs</h4>
               <p>Inscription, connexion, profils utilisateurs et historique des commandes</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">ADMIN</div>
+              <div className="feature-icon"><i className="fas fa-cog"></i></div>
               <h4>Interface d'administration</h4>
               <p>Dashboard administrateur complet avec EasyAdmin pour gérer le site</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">RESP</div>
+              <div className="feature-icon"><i className="fas fa-mobile-alt"></i></div>
               <h4>Responsive Design</h4>
               <p>Interface adaptée à tous les écrans : mobile, tablette et desktop</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">SEARCH</div>
+              <div className="feature-icon"><i className="fas fa-search"></i></div>
               <h4>Recherche et filtres</h4>
               <p>Recherche avancée par catégorie, prix et critères multiples</p>
             </div>
