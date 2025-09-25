@@ -78,32 +78,32 @@ const HorizontalAbout = () => {
         <div className="slide-content">
           <div className="other-skills">
             <div className="skill-card">
-              <div className="skill-icon">🌐</div>
+              <div className="skill-icon">WEB</div>
               <h3>Création de sites web</h3>
               <p>Développement complet de A à Z</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">🚀</div>
+              <div className="skill-icon">HOST</div>
               <h3>Mise en ligne</h3>
               <p>Hébergement et déploiement de projets</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">📱</div>
+              <div className="skill-icon">RESP</div>
               <h3>Responsive Design</h3>
               <p>Optimisation pour tous les appareils</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">♿</div>
+              <div className="skill-icon">A11Y</div>
               <h3>Accessibilité</h3>
               <p>Standards WCAG et bonnes pratiques</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">🎨</div>
+              <div className="skill-icon">UI</div>
               <h3>Intégration</h3>
               <p>Transformation de maquettes en code</p>
             </div>
             <div className="skill-card">
-              <div className="skill-icon">⚡</div>
+              <div className="skill-icon">PERF</div>
               <h3>Performance</h3>
               <p>Optimisation et méthodologie agile</p>
             </div>

@@ -156,8 +156,13 @@
 }
 
 .skill-icon {
-  font-size: 3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 20px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
 }
 
 .skill-card h3 {
