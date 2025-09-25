@@ -28,8 +28,8 @@ const About = () => {
       {/* Hero Section */}
       <div className="about-hero">
         <div className="hero-content">
-          <h1 className="hero-title">À propos de nous</h1>
-          <p className="hero-subtitle">Découvrez notre passion pour la photographie et notre équipe de professionnels.</p>
+          <h1 className="hero-title">À propos de moi</h1>
+          <p className="hero-subtitle">Découvrez ma passion pour le développement web et mon parcours professionnel.</p>
         </div>
       </div>
 
@@ -42,82 +42,90 @@ const About = () => {
               <img src={sidyNoir} alt="Sidy Djimbira" />
             </div>
             <div className="story-content">
-              <h2>Notre histoire</h2>
-              <p>Depuis notre création en 2010, Portfolio Photo s'est engagé à offrir des services de photographie de la plus haute qualité.</p>
+              <h2>Mon parcours</h2>
+              <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Passionné par le développement web depuis plusieurs années, je me spécialise dans la création d'interfaces modernes et performantes.</p>
+              <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des technologies web modernes pour concevoir, développer et déployer des applications web de qualité professionnelle.</p>
             </div>
           </div>
 
           {/* Mission Section */}
           <div className="about-mission">
-            <h2>Notre mission</h2>
-            <p>Nous nous engageons à fournir des services de photographie exceptionnels.</p>
+            <h2>Mon approche</h2>
+            <p>Je m'engage à fournir des solutions web exceptionnelles et adaptées à vos besoins.</p>
             
             <div className="mission-cards">
               <div className="mission-card">
-                <div className="mission-icon">📷</div>
-                <h3>Qualité exceptionnelle</h3>
-                <p>Nous utilisons des équipements professionnels et des techniques avancées pour créer des images de haute qualité qui dépassent vos attentes.</p>
+                <div className="mission-icon">💻</div>
+                <h3>Code de qualité</h3>
+                <p>J'utilise les meilleures pratiques et les technologies les plus récentes pour créer des applications robustes, maintenables et performantes.</p>
               </div>
               
               <div className="mission-card">
-                <div className="mission-icon">💖</div>
-                <h3>Passion et créativité</h3>
-                <p>Nous explorons constamment de nouvelles idées et perspectives pour créer des images uniques qui se démarquent.</p>
+                <div className="mission-icon">🎨</div>
+                <h3>Design moderne</h3>
+                <p>Je crée des interfaces utilisateur intuitives et esthétiques, en alliant créativité et expérience utilisateur optimale.</p>
               </div>
               
               <div className="mission-card">
-                <div className="mission-icon">👥</div>
-                <h3>Service client</h3>
-                <p>Nous mettons l'accent sur un service personnalisé et nous efforçons de dépasser les attentes de nos clients à chaque étape du processus.</p>
+                <div className="mission-icon">🚀</div>
+                <h3>Performance</h3>
+                <p>Je mets l'accent sur l'optimisation et les performances pour garantir une expérience utilisateur fluide et rapide.</p>
               </div>
             </div>
           </div>
 
-          {/* Skills Section - Team */}
+          {/* Skills Section */}
           <div className="about-skills">
-            <h2>Notre équipe</h2>
-            <p>Rencontrez nos photographes professionnels.</p>
+            <h2>Mes compétences techniques</h2>
+            <p>Technologies et outils que je maîtrise.</p>
             
-            <div className="team-grid">
-              <div className="team-member">
-                <div className="member-image">
-                  <img src={sidyNoir} alt="Membre de l'équipe 1" />
+            <div className="skills-grid">
+              {allSkills.map((skill, index) => (
+                <div className="skill-item" key={index}>
+                  <img src={skill.icon} alt={skill.name} />
+                  <span>{skill.name}</span>
                 </div>
-                <h3>Membre de l'équipe 1</h3>
-                <p>Description du membre 1</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Projects Preview */}
+          <div className="projects-preview">
+            <h2>Mes projets récents</h2>
+            <p>Découvrez quelques-unes de mes réalisations.</p>
+            
+            <div className="projects-grid">
+              <div className="project-item">
+                <div className="project-icon">🛒</div>
+                <h3>MangaStore</h3>
+                <p>E-commerce Symfony avec design moderne et fonctionnalités complètes.</p>
               </div>
               
-              <div className="team-member">
-                <div className="member-image">
-                  <img src={sidyNoir} alt="Membre de l'équipe 2" />
-                </div>
-                <h3>Membre de l'équipe 2</h3>
-                <p>Description du membre 2</p>
+              <div className="project-item">
+                <div className="project-icon">📱</div>
+                <h3>Spotify Mobile</h3>
+                <p>Application React Native avec intégration API Spotify et interface intuitive.</p>
               </div>
               
-              <div className="team-member">
-                <div className="member-image">
-                  <img src={sidyNoir} alt="Membre de l'équipe 3" />
-                </div>
-                <h3>Membre de l'équipe 3</h3>
-                <p>Description du membre 3</p>
+              <div className="project-item">
+                <div className="project-icon">📸</div>
+                <h3>Portfolio Photo</h3>
+                <p>Galerie photographique avec système d'administration et design responsive.</p>
               </div>
               
-              <div className="team-member">
-                <div className="member-image">
-                  <div className="placeholder-icon">🏔️</div>
-                </div>
-                <h3>Membre de l'équipe 4</h3>
-                <p>Description du membre 4</p>
+              <div className="project-item">
+                <div className="project-icon">⚡</div>
+                <h3>PokéBuild API</h3>
+                <p>Application React avec intégration PokéAPI et gestion d'équipes Pokémon.</p>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
           <div className="about-cta">
-            <h2>Prêt à travailler avec nous ?</h2>
-            <p>Contactez-nous dès aujourd'hui pour discuter de votre projet photographique.</p>
-            <button className="cta-button">CONTACTEZ-NOUS</button>
+            <h2>Prêt à collaborer ?</h2>
+            <p>Contactez-moi dès aujourd'hui pour discuter de votre projet web.</p>
+            <button className="cta-button">ME CONTACTER</button>
           </div>
         </div>
       </div>
