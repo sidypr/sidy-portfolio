@@ -28,8 +28,8 @@ const About = () => {
       {/* Hero Section */}
       <div className="about-hero">
         <div className="hero-content">
-          <h1 className="hero-title">À propos de moi</h1>
-          <p className="hero-subtitle">Découvrez ma passion pour le développement web et mon parcours professionnel.</p>
+          <h1 className="hero-title">À propos de nous</h1>
+          <p className="hero-subtitle">Découvrez notre passion pour la photographie et notre équipe de professionnels.</p>
         </div>
       </div>
 
@@ -42,58 +42,82 @@ const About = () => {
               <img src={sidyNoir} alt="Sidy Djimbira" />
             </div>
             <div className="story-content">
-              <h2>Mon histoire</h2>
-              <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Je suis passionné par le développement web et actuellement à la recherche de ma première opportunité professionnelle en tant que développeur web ou intégrateur web.</p>
-              <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
+              <h2>Notre histoire</h2>
+              <p>Depuis notre création en 2010, Portfolio Photo s'est engagé à offrir des services de photographie de la plus haute qualité.</p>
             </div>
           </div>
 
           {/* Mission Section */}
           <div className="about-mission">
-            <h2>Ma mission</h2>
-            <p>Je m'engage à fournir des solutions web exceptionnelles.</p>
+            <h2>Notre mission</h2>
+            <p>Nous nous engageons à fournir des services de photographie exceptionnels.</p>
             
             <div className="mission-cards">
               <div className="mission-card">
-                <div className="mission-icon">💻</div>
+                <div className="mission-icon">📷</div>
                 <h3>Qualité exceptionnelle</h3>
-                <p>J'utilise des équipements professionnels et des techniques avancées pour créer des images de haute qualité qui dépassent vos attentes.</p>
+                <p>Nous utilisons des équipements professionnels et des techniques avancées pour créer des images de haute qualité qui dépassent vos attentes.</p>
               </div>
               
               <div className="mission-card">
-                <div className="mission-icon">🎨</div>
+                <div className="mission-icon">💖</div>
                 <h3>Passion et créativité</h3>
-                <p>J'explore constamment de nouvelles idées et perspectives pour créer des solutions uniques et innovantes qui se démarquent.</p>
+                <p>Nous explorons constamment de nouvelles idées et perspectives pour créer des images uniques qui se démarquent.</p>
               </div>
               
               <div className="mission-card">
-                <div className="mission-icon">🤝</div>
+                <div className="mission-icon">👥</div>
                 <h3>Service client</h3>
-                <p>Je mets l'accent sur un service personnalisé et m'efforce de dépasser les attentes de mes clients à chaque étape du processus.</p>
+                <p>Nous mettons l'accent sur un service personnalisé et nous efforçons de dépasser les attentes de nos clients à chaque étape du processus.</p>
               </div>
             </div>
           </div>
 
-          {/* Skills Section */}
+          {/* Skills Section - Team */}
           <div className="about-skills">
-            <h2>Mes compétences techniques</h2>
-            <p>Rencontrez mes technologies de prédilection.</p>
+            <h2>Notre équipe</h2>
+            <p>Rencontrez nos photographes professionnels.</p>
             
-            <div className="skills-grid">
-              {allSkills.map((skill, index) => (
-                <div className="skill-item" key={index}>
-                  <img src={skill.icon} alt={skill.name} />
-                  <span>{skill.name}</span>
+            <div className="team-grid">
+              <div className="team-member">
+                <div className="member-image">
+                  <img src={sidyNoir} alt="Membre de l'équipe 1" />
                 </div>
-              ))}
+                <h3>Membre de l'équipe 1</h3>
+                <p>Description du membre 1</p>
+              </div>
+              
+              <div className="team-member">
+                <div className="member-image">
+                  <img src={sidyNoir} alt="Membre de l'équipe 2" />
+                </div>
+                <h3>Membre de l'équipe 2</h3>
+                <p>Description du membre 2</p>
+              </div>
+              
+              <div className="team-member">
+                <div className="member-image">
+                  <img src={sidyNoir} alt="Membre de l'équipe 3" />
+                </div>
+                <h3>Membre de l'équipe 3</h3>
+                <p>Description du membre 3</p>
+              </div>
+              
+              <div className="team-member">
+                <div className="member-image">
+                  <div className="placeholder-icon">🏔️</div>
+                </div>
+                <h3>Membre de l'équipe 4</h3>
+                <p>Description du membre 4</p>
+              </div>
             </div>
           </div>
 
           {/* CTA Section */}
           <div className="about-cta">
-            <h2>Prêt à travailler avec moi ?</h2>
-            <p>Contactez-moi dès aujourd'hui pour discuter de votre projet web.</p>
-            <button className="cta-button">ME CONTACTER</button>
+            <h2>Prêt à travailler avec nous ?</h2>
+            <p>Contactez-nous dès aujourd'hui pour discuter de votre projet photographique.</p>
+            <button className="cta-button">CONTACTEZ-NOUS</button>
           </div>
         </div>
       </div>
