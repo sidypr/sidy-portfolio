@@ -22,75 +22,78 @@ const About = () => {
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React Native' },
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg', name: 'Expo' }
   ];
-  const skillsGroups = [];
-  for (let i = 0; i < allSkills.length; i += 6) {
-    skillsGroups.push(allSkills.slice(i, i + 6));
-  }
 
   return (
-    <div className="about-container fadeIn">
-      <div className="about-content">
-        <div className="about-text">
-          <h1 className="about-title">À Propos</h1>
-          <div className="about-cards">
-            <div className="about-card fadeInUp">
-              <div className="card-header">
-                <h3>Présentation</h3>
-              </div>
-              <div className="card-content presentation-content" style={{fontFamily: 'Inter, sans-serif'}}>
-                <div className="presentation-text">
-                  <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Je suis passionné par le développement web et actuellement à la recherche de ma première opportunité professionnelle en tant que développeur web ou intégrateur web.</p>
-                  <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
-                </div>
-                <div className="presentation-photo">
-                  <img alt="Sidy Djimbira" src={sidyNoir} />
-                </div>
-              </div>
-            </div>
+    <div className="about-container">
+      {/* Hero Section */}
+      <div className="about-hero">
+        <div className="hero-content">
+          <h1 className="hero-title">À propos de moi</h1>
+          <p className="hero-subtitle">Découvrez ma passion pour le développement web et mon parcours professionnel.</p>
+        </div>
+      </div>
 
-            <div className="about-card fadeInUp" style={{animationDelay: '0.2s'}}>
-              <div className="card-header">
-                <h3>Compétences Techniques</h3>
+      {/* Main Content */}
+      <div className="about-main">
+        <div className="about-wrapper">
+          {/* About Story Section */}
+          <div className="about-story">
+            <div className="story-image">
+              <img src={sidyNoir} alt="Sidy Djimbira" />
+            </div>
+            <div className="story-content">
+              <h2>Mon histoire</h2>
+              <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Je suis passionné par le développement web et actuellement à la recherche de ma première opportunité professionnelle en tant que développeur web ou intégrateur web.</p>
+              <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
+            </div>
+          </div>
+
+          {/* Mission Section */}
+          <div className="about-mission">
+            <h2>Ma mission</h2>
+            <p>Je m'engage à fournir des solutions web exceptionnelles.</p>
+            
+            <div className="mission-cards">
+              <div className="mission-card">
+                <div className="mission-icon">💻</div>
+                <h3>Qualité exceptionnelle</h3>
+                <p>J'utilise des équipements professionnels et des techniques avancées pour créer des images de haute qualité qui dépassent vos attentes.</p>
               </div>
-              <div className="card-content">
-                <div className="skills-grid">
-                  {skillsGroups.map((group, i) => (
-                    <div className="skills-row" key={i}>
-                      {group.map((skill, j) => (
-                        <div className="tech-logo" key={j}>
-                          <img src={skill.icon} alt={skill.name} />
-                          <span>{skill.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
+              
+              <div className="mission-card">
+                <div className="mission-icon">🎨</div>
+                <h3>Passion et créativité</h3>
+                <p>J'explore constamment de nouvelles idées et perspectives pour créer des solutions uniques et innovantes qui se démarquent.</p>
+              </div>
+              
+              <div className="mission-card">
+                <div className="mission-icon">🤝</div>
+                <h3>Service client</h3>
+                <p>Je mets l'accent sur un service personnalisé et m'efforce de dépasser les attentes de mes clients à chaque étape du processus.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Skills Section */}
+          <div className="about-skills">
+            <h2>Mes compétences techniques</h2>
+            <p>Rencontrez mes technologies de prédilection.</p>
+            
+            <div className="skills-grid">
+              {allSkills.map((skill, index) => (
+                <div className="skill-item" key={index}>
+                  <img src={skill.icon} alt={skill.name} />
+                  <span>{skill.name}</span>
                 </div>
-              </div>
+              ))}
             </div>
+          </div>
 
-            <div className="about-card fadeInUp" style={{animationDelay: '0.3s'}}>
-              <div className="card-header">
-                <h3>Autres Compétences</h3>
-              </div>
-              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
-                <ul className="skills-list">
-                  <li>Création de sites web de A à Z</li>
-                  <li>Mise en ligne et hébergement de projets</li>
-                  <li>Optimisation responsive et accessibilité</li>
-                  <li>Gestion de projet et méthodologie agile</li>
-                  <li>Intégration de maquettes</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="about-card fadeInUp" style={{animationDelay: '0.4s'}}>
-              <div className="card-header">
-                <h3>Objectif Professionnel</h3>
-              </div>
-              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
-                <p>Je cherche à intégrer une équipe dynamique qui me permettra de continuer à progresser tout en apportant mes compétences techniques, ma rigueur et ma motivation. Curieux, autonome et à l'écoute, je suis prêt à relever tous les défis techniques et créatifs !</p>
-              </div>
-            </div>
+          {/* CTA Section */}
+          <div className="about-cta">
+            <h2>Prêt à travailler avec moi ?</h2>
+            <p>Contactez-moi dès aujourd'hui pour discuter de votre projet web.</p>
+            <button className="cta-button">ME CONTACTER</button>
           </div>
         </div>
       </div>
