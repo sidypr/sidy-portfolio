@@ -29,7 +29,7 @@ const About = () => {
       <div className="about-hero">
         <div className="hero-content">
           <h1 className="hero-title">À propos de moi</h1>
-          <p className="hero-subtitle">Découvrez ma passion pour le développement web et mon parcours professionnel.</p>
+          <p className="hero-subtitle">Développeur web passionné, créateur d'expériences digitales modernes</p>
         </div>
       </div>
 
@@ -43,41 +43,41 @@ const About = () => {
             </div>
             <div className="story-content">
               <h2>Mon parcours</h2>
-              <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Passionné par le développement web depuis plusieurs années, je me spécialise dans la création d'interfaces modernes et performantes.</p>
-              <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des technologies web modernes pour concevoir, développer et déployer des applications web de qualité professionnelle.</p>
+              <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Paris. Passionné par les technologies web modernes, je me spécialise dans la création d'interfaces utilisateur performantes et intuitives.</p>
+              <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
             </div>
           </div>
 
           {/* Mission Section */}
           <div className="about-mission">
             <h2>Mon approche</h2>
-            <p>Je m'engage à fournir des solutions web exceptionnelles et adaptées à vos besoins.</p>
+            <p>Je combine créativité et rigueur technique pour créer des solutions web innovantes.</p>
             
             <div className="mission-cards">
               <div className="mission-card">
-                <div className="mission-icon">💻</div>
-                <h3>Code de qualité</h3>
-                <p>J'utilise les meilleures pratiques et les technologies les plus récentes pour créer des applications robustes, maintenables et performantes.</p>
+                <div className="mission-icon"><i className="fas fa-laptop-code"></i></div>
+                <h3>Développement moderne</h3>
+                <p>Utilisation des dernières technologies et frameworks pour créer des applications web performantes et évolutives.</p>
               </div>
               
               <div className="mission-card">
-                <div className="mission-icon">🎨</div>
-                <h3>Design moderne</h3>
-                <p>Je crée des interfaces utilisateur intuitives et esthétiques, en alliant créativité et expérience utilisateur optimale.</p>
+                <div className="mission-icon"><i className="fas fa-palette"></i></div>
+                <h3>Design centré utilisateur</h3>
+                <p>Conception d'interfaces intuitives et accessibles qui offrent une expérience utilisateur exceptionnelle.</p>
               </div>
               
               <div className="mission-card">
-                <div className="mission-icon">🚀</div>
-                <h3>Performance</h3>
-                <p>Je mets l'accent sur l'optimisation et les performances pour garantir une expérience utilisateur fluide et rapide.</p>
+                <div className="mission-icon"><i className="fas fa-bolt"></i></div>
+                <h3>Performance optimisée</h3>
+                <p>Développement de solutions rapides et efficaces avec un focus sur l'optimisation et les bonnes pratiques.</p>
               </div>
             </div>
           </div>
 
           {/* Skills Section */}
           <div className="about-skills">
-            <h2>Mes compétences techniques</h2>
-            <p>Technologies et outils que je maîtrise.</p>
+            <h2>Compétences techniques</h2>
+            <p>Technologies et outils que je maîtrise pour créer des projets web de qualité.</p>
             
             <div className="skills-grid">
               {allSkills.map((skill, index) => (
@@ -89,43 +89,11 @@ const About = () => {
             </div>
           </div>
 
-          {/* Projects Preview */}
-          <div className="projects-preview">
-            <h2>Mes projets récents</h2>
-            <p>Découvrez quelques-unes de mes réalisations.</p>
-            
-            <div className="projects-grid">
-              <div className="project-item">
-                <div className="project-icon">🛒</div>
-                <h3>MangaStore</h3>
-                <p>E-commerce Symfony avec design moderne et fonctionnalités complètes.</p>
-              </div>
-              
-              <div className="project-item">
-                <div className="project-icon">📱</div>
-                <h3>Spotify Mobile</h3>
-                <p>Application React Native avec intégration API Spotify et interface intuitive.</p>
-              </div>
-              
-              <div className="project-item">
-                <div className="project-icon">📸</div>
-                <h3>Portfolio Photo</h3>
-                <p>Galerie photographique avec système d'administration et design responsive.</p>
-              </div>
-              
-              <div className="project-item">
-                <div className="project-icon">⚡</div>
-                <h3>PokéBuild API</h3>
-                <p>Application React avec intégration PokéAPI et gestion d'équipes Pokémon.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section */}
+          {/* Contact CTA */}
           <div className="about-cta">
-            <h2>Prêt à collaborer ?</h2>
-            <p>Contactez-moi dès aujourd'hui pour discuter de votre projet web.</p>
-            <button className="cta-button">ME CONTACTER</button>
+            <h2>Travaillons ensemble</h2>
+            <p>Vous avez un projet en tête ? Je serais ravi de discuter de vos besoins et de vous aider à les concrétiser.</p>
+            <a href="mailto:sidy.djimbira@gmail.com" className="cta-button">Me contacter</a>
           </div>
         </div>
       </div>
@@ -133,4 +101,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

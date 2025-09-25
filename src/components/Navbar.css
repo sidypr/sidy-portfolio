@@ -5,8 +5,8 @@
   right: 0;
   z-index: 9999;
   padding: 1rem 2rem;
-  background: transparent;
-  backdrop-filter: none;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   height: 60px;
 }
