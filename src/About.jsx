@@ -89,12 +89,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Contact CTA */}
-          <div className="about-cta">
-            <h2>Travaillons ensemble</h2>
-            <p>Vous avez un projet en tête ? Je serais ravi de discuter de vos besoins et de vous aider à les concrétiser.</p>
-            <a href="mailto:sidy.djimbira@gmail.com" className="cta-button">Me contacter</a>
-          </div>
         </div>
       </div>
     </div>
