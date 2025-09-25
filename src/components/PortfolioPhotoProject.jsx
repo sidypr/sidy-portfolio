@@ -91,7 +91,7 @@ const PortfolioPhotoProject = () => {
       <div className="project-header" style={{backgroundImage:`url(${headerImg})`}}>
         <div className="container">
           <Link to="/projects" className="back-link">← Retour aux projets</Link>
-          <h1 className="project-title">Portfolio Photo Symfony</h1>
+          <h1 className="project-title">📸 Portfolio Photo Symfony</h1>
           <p className="project-subtitle">Application web de gestion de portfolio photographique développée avec Symfony</p>
           
           <div className="project-links">
@@ -202,7 +202,7 @@ const PortfolioPhotoProject = () => {
               <p>Présentation avec photos vedettes et photo d'arrière-plan</p>
             </div>
             <div className="feature">
-              <div className="feature-icon"><i className="fas fa-images"></i></div>
+              <div className="feature-icon">🖼️</div>
               <h4>Galerie interactive</h4>
               <p>Affichage de toutes les photos avec filtrage par catégorie</p>
             </div>
@@ -217,7 +217,7 @@ const PortfolioPhotoProject = () => {
               <p>Informations de contact et heures d'ouverture</p>
             </div>
             <div className="feature">
-              <div className="feature-icon"><i className="fas fa-cogs"></i></div>
+              <div className="feature-icon">⚙️</div>
               <h4>Administration</h4>
               <p>Dashboard avec statistiques et gestion complète</p>
             </div>

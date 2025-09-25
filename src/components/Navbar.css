@@ -5,8 +5,8 @@
   right: 0;
   z-index: 9999;
   padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  backdrop-filter: none;
   transition: all 0.3s ease;
   height: 60px;
 }
@@ -81,7 +81,6 @@
   position: relative;
   padding: 5px 0;
   transition: color 0.3s ease;
-  scroll-behavior: smooth;
 }
 
 .navbar-links li a::after {
@@ -184,7 +183,6 @@
   transition: opacity 0.3s ease;
   display: block;
   padding: 10px;
-  scroll-behavior: smooth;
 }
 
 .navbar-mobile-links li a:hover {

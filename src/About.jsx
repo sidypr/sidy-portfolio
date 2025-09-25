@@ -22,77 +22,80 @@ const About = () => {
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React Native' },
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg', name: 'Expo' }
   ];
+  const skillsGroups = [];
+  for (let i = 0; i < allSkills.length; i += 6) {
+    skillsGroups.push(allSkills.slice(i, i + 6));
+  }
 
   return (
-    <div className="about-container">
-      {/* Hero Section */}
-      <div className="about-hero">
-        <div className="hero-content">
-          <h1 className="hero-title">À propos de moi</h1>
-          <p className="hero-subtitle">Développeur web passionné, créateur d'expériences digitales modernes</p>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="about-main">
-        <div className="about-wrapper">
-          {/* About Story Section */}
-          <div className="about-story">
-            <div className="story-image">
-              <img src={sidyNoir} alt="Sidy Djimbira" />
-            </div>
-            <div className="story-content">
-              <h2>Mon parcours</h2>
-              <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Paris. Passionné par les technologies web modernes, je me spécialise dans la création d'interfaces utilisateur performantes et intuitives.</p>
-              <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
-            </div>
-          </div>
-
-          {/* Mission Section */}
-          <div className="about-mission">
-            <h2>Mon approche</h2>
-            <p>Je combine créativité et rigueur technique pour créer des solutions web innovantes.</p>
-            
-            <div className="mission-cards">
-              <div className="mission-card">
-                <div className="mission-icon"><i className="fas fa-laptop-code"></i></div>
-                <h3>Développement moderne</h3>
-                <p>Utilisation des dernières technologies et frameworks pour créer des applications web performantes et évolutives.</p>
+    <div className="about-container fadeIn">
+      <div className="about-content">
+        <div className="about-text">
+          <h1 className="about-title">À Propos</h1>
+          <div className="about-cards">
+            <div className="about-card fadeInUp">
+              <div className="card-header">
+                <h3>Présentation</h3>
               </div>
-              
-              <div className="mission-card">
-                <div className="mission-icon"><i className="fas fa-palette"></i></div>
-                <h3>Design centré utilisateur</h3>
-                <p>Conception d'interfaces intuitives et accessibles qui offrent une expérience utilisateur exceptionnelle.</p>
-              </div>
-              
-              <div className="mission-card">
-                <div className="mission-icon"><i className="fas fa-bolt"></i></div>
-                <h3>Performance optimisée</h3>
-                <p>Développement de solutions rapides et efficaces avec un focus sur l'optimisation et les bonnes pratiques.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Skills Section */}
-          <div className="about-skills">
-            <h2>Compétences techniques</h2>
-            <p>Technologies et outils que je maîtrise pour créer des projets web de qualité.</p>
-            
-            <div className="skills-grid">
-              {allSkills.map((skill, index) => (
-                <div className="skill-item" key={index}>
-                  <img src={skill.icon} alt={skill.name} />
-                  <span>{skill.name}</span>
+              <div className="card-content presentation-content" style={{fontFamily: 'Inter, sans-serif'}}>
+                <div className="presentation-text">
+                  <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Je suis passionné par le développement web et actuellement à la recherche de ma première opportunité professionnelle en tant que développeur web ou intégrateur web.</p>
+                  <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
                 </div>
-              ))}
+                <div className="presentation-photo">
+                  <img alt="Sidy Djimbira" src={sidyNoir} />
+                </div>
+              </div>
+            </div>
+
+            <div className="about-card fadeInUp" style={{animationDelay: '0.2s'}}>
+              <div className="card-header">
+                <h3>Compétences Techniques</h3>
+              </div>
+              <div className="card-content">
+                <div className="skills-grid">
+                  {skillsGroups.map((group, i) => (
+                    <div className="skills-row" key={i}>
+                      {group.map((skill, j) => (
+                        <div className="tech-logo" key={j}>
+                          <img src={skill.icon} alt={skill.name} />
+                          <span>{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="about-card fadeInUp" style={{animationDelay: '0.3s'}}>
+              <div className="card-header">
+                <h3>Autres Compétences</h3>
+              </div>
+              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
+                <ul className="skills-list">
+                  <li>Création de sites web de A à Z</li>
+                  <li>Mise en ligne et hébergement de projets</li>
+                  <li>Optimisation responsive et accessibilité</li>
+                  <li>Gestion de projet et méthodologie agile</li>
+                  <li>Intégration de maquettes</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="about-card fadeInUp" style={{animationDelay: '0.4s'}}>
+              <div className="card-header">
+                <h3>Objectif Professionnel</h3>
+              </div>
+              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
+                <p>Je cherche à intégrer une équipe dynamique qui me permettra de continuer à progresser tout en apportant mes compétences techniques, ma rigueur et ma motivation. Curieux, autonome et à l'écoute, je suis prêt à relever tous les défis techniques et créatifs !</p>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   );
 };
 
-export default About;
+export default About; 

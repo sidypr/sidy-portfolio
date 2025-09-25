@@ -87,7 +87,7 @@ const MangastoreProject = () => {
       <div className="project-header" style={{backgroundImage:`url(${headerImg})`}}>
         <div className="container">
           <Link to="/projects" className="back-link">← Retour aux projets</Link>
-          <h1 className="project-title">MangaStore</h1>
+          <h1 className="project-title">🛒 MangaStore</h1>
           <p className="project-subtitle">Boutique en ligne de mangas développée avec Symfony 6.4</p>
           
           <div className="project-links">
@@ -103,7 +103,7 @@ const MangastoreProject = () => {
 
       <div className="container">
         <section className="project-overview">
-          <h2>Vue d'ensemble</h2>
+          <h2>🎯 Vue d'ensemble</h2>
           <p>
             <strong>MangaStore</strong> est une <strong>boutique en ligne de mangas</strong> développée avec 
             <strong> Symfony 6.4</strong>, offrant une plateforme e-commerce complète pour la vente de mangas 
@@ -113,10 +113,10 @@ const MangastoreProject = () => {
 
         {/* Architecture technique */}
         <section className="architecture-section">
-          <h2>Architecture technique</h2>
+          <h2>🏗️ Architecture technique</h2>
           <div className="architecture-grid">
             <div className="arch-card">
-              <h3>Framework & Backend</h3>
+              <h3>🔧 Framework & Backend</h3>
               <ul>
                 <li><strong>Symfony 6.4 LTS</strong> - Framework PHP moderne</li>
                 <li><strong>PHP 8.4.6</strong> - Langage serveur</li>
@@ -126,7 +126,7 @@ const MangastoreProject = () => {
               </ul>
             </div>
             <div className="arch-card">
-              <h3>Base de données</h3>
+              <h3>💾 Base de données</h3>
               <ul>
                 <li><strong>MySQL 8.0</strong> - SGBD relationnel</li>
                 <li><strong>Migrations Doctrine</strong> - Versioning BDD</li>
@@ -135,7 +135,7 @@ const MangastoreProject = () => {
               </ul>
             </div>
             <div className="arch-card">
-              <h3>Frontend & Interface</h3>
+              <h3>🎨 Frontend & Interface</h3>
               <ul>
                 <li><strong>Bootstrap 5.3.6</strong> - Framework CSS</li>
                 <li><strong>React 18.2.0</strong> - Composants dynamiques</li>
@@ -144,7 +144,7 @@ const MangastoreProject = () => {
               </ul>
             </div>
             <div className="arch-card">
-              <h3>Services externes</h3>
+              <h3>💳 Services externes</h3>
               <ul>
                 <li><strong>Stripe API</strong> - Paiements sécurisés</li>
                 <li><strong>Symfony Mailer</strong> - Envoi d'emails</li>
@@ -156,7 +156,7 @@ const MangastoreProject = () => {
         </section>
 
         <section className="tech-stack">
-          <h2>Technologies utilisées</h2>
+          <h2>🛠️ Technologies utilisées</h2>
           
           <div className="tech-grid">
             <div className="tech-category">
@@ -217,7 +217,7 @@ const MangastoreProject = () => {
         </section>
 
         <section className="database-structure">
-          <h2>Structure de la base de données</h2>
+          <h2>💾 Structure de la base de données</h2>
           <div className="database-schema">
             <pre>
 {`┌─────────────┐    ┌──────────────┐    ┌─────────────┐
@@ -268,15 +268,15 @@ const MangastoreProject = () => {
         </section>
 
         <section className="features">
-          <h2>Fonctionnalités principales</h2>
+          <h2>🚀 Fonctionnalités principales</h2>
           <div className="features-grid">
             <div className="feature">
-              <div className="feature-icon"><i className="fas fa-shopping-cart"></i></div>
+              <div className="feature-icon">🛒</div>
               <h4>E-commerce complet</h4>
               <p>Catalogue de produits, panier, commandes et gestion des stocks en temps réel</p>
             </div>
             <div className="feature">
-              <div className="feature-icon"><i className="fas fa-credit-card"></i></div>
+              <div className="feature-icon">💳</div>
               <h4>Paiement sécurisé</h4>
               <p>Intégration Stripe pour des transactions sécurisées avec cartes bancaires</p>
             </div>
@@ -286,7 +286,7 @@ const MangastoreProject = () => {
               <p>Inscription, connexion, profils utilisateurs et historique des commandes</p>
             </div>
             <div className="feature">
-              <div className="feature-icon"><i className="fas fa-cogs"></i></div>
+              <div className="feature-icon">⚙️</div>
               <h4>Interface d'administration</h4>
               <p>Dashboard administrateur complet avec EasyAdmin pour gérer le site</p>
             </div>
@@ -305,7 +305,7 @@ const MangastoreProject = () => {
 
         {/* Installation */}
         <section className="installation-section">
-          <h2>Installation et démarrage</h2>
+          <h2>🔧 Installation et démarrage</h2>
           <div className="install-steps">
             <div className="step-card">
               <h3>1. Clonage du projet</h3>
@@ -371,7 +371,7 @@ symfony server:start`}
           <h2>🔥 Fonctionnalités avancées</h2>
           <div className="advanced-grid">
             <div className="advanced-card">
-              <h3>Sécurité</h3>
+              <h3>🔐 Sécurité</h3>
               <ul>
                 <li>Authentification Symfony Security</li>
                 <li>Hashage des mots de passe avec Argon2i</li>
@@ -381,7 +381,7 @@ symfony server:start`}
               </ul>
             </div>
             <div className="advanced-card">
-              <h3>Performance</h3>
+              <h3>📊 Performance</h3>
               <ul>
                 <li>Pagination optimisée avec KnpPaginator</li>
                 <li>Cache Symfony pour les données statiques</li>
@@ -391,7 +391,7 @@ symfony server:start`}
               </ul>
             </div>
             <div className="advanced-card">
-              <h3>UX/UI</h3>
+              <h3>🎨 UX/UI</h3>
               <ul>
                 <li>Interface responsive Bootstrap 5</li>
                 <li>Animations fluides avec Framer Motion</li>
@@ -401,7 +401,7 @@ symfony server:start`}
               </ul>
             </div>
             <div className="advanced-card">
-              <h3>Administration</h3>
+              <h3>🔧 Administration</h3>
               <ul>
                 <li>Dashboard EasyAdmin personnalisé</li>
                 <li>CRUD complet pour tous les modèles</li>
@@ -415,24 +415,24 @@ symfony server:start`}
 
         {/* État du projet */}
         <section className="project-status">
-          <h2>État du projet</h2>
+          <h2>🎯 État du projet</h2>
           <div className="status-card">
-            <div className="status-badge"><i className="fas fa-check-circle"></i> Projet complet et fonctionnel</div>
+            <div className="status-badge">✅ Projet complet et fonctionnel</div>
             <div className="status-grid">
               <div className="status-item">
-                <h4><i className="fas fa-check"></i> Frontend complet</h4>
+                <h4>✅ Frontend complet</h4>
                 <p>Interface utilisateur moderne et responsive</p>
               </div>
               <div className="status-item">
-                <h4><i className="fas fa-check"></i> Backend robuste</h4>
+                <h4>✅ Backend robuste</h4>
                 <p>API Symfony avec architecture MVC</p>
               </div>
               <div className="status-item">
-                <h4><i className="fas fa-check"></i> E-commerce fonctionnel</h4>
+                <h4>✅ E-commerce fonctionnel</h4>
                 <p>Panier, commandes et paiements Stripe</p>
               </div>
               <div className="status-item">
-                <h4><i className="fas fa-check"></i> Administration complète</h4>
+                <h4>✅ Administration complète</h4>
                 <p>Interface admin EasyAdmin opérationnelle</p>
               </div>
             </div>
@@ -445,7 +445,7 @@ symfony server:start`}
         </section>
 
         <section className="project-conclusion">
-          <h2>Conclusion</h2>
+          <h2>🎯 Conclusion</h2>
           <p>
             Ce projet démontre ma maîtrise de <strong>Symfony</strong> et du développement d'applications 
             e-commerce complètes. Il illustre ma capacité à intégrer des technologies modernes pour créer 
