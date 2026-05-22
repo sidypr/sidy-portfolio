@@ -24,10 +24,10 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const isActive = (match) => match(location.pathname);
-  const isContact = location.pathname === '/contact';
+  const isDitherPage = location.pathname === '/' || location.pathname === '/contact';
 
   return (
-    <header className={`navbar${isContact ? ' navbar--light-bg' : ''}`}>
+    <header className={`navbar${isDitherPage ? ' navbar--on-dither' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-info">
           <span className="navbar-location">Paris, France</span>

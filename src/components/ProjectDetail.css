@@ -1,0 +1,492 @@
+/* Pages détail projet — thème unifié noir / blanc / gris */
+
+.mangastore-project,
+.portfolio-photo-project,
+.spotify-mobile-project {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ffffff;
+  font-family: var(--font-body);
+  padding-bottom: 4rem;
+}
+
+/* —— Hero —— */
+.project-header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: calc(var(--nav-height) + 2rem) var(--page-padding-x) 3rem;
+  text-align: center;
+  margin-bottom: 0;
+  min-height: 42vh;
+  max-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.spotify-mobile-project .project-header {
+  align-items: center;
+  padding-bottom: 2.5rem;
+}
+
+.project-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+.project-header .container,
+.project-title-section,
+.spotify-mobile-project .back-link {
+  position: relative;
+  z-index: 2;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #b5b5b5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+  transition: color 0.25s ease;
+}
+
+.back-link:hover {
+  color: #ffffff;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.spotify-mobile-project .project-title {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+}
+
+.project-subtitle {
+  font-size: 1.05rem;
+  color: #b5b5b5;
+  margin: 0 auto 1.5rem;
+  max-width: 560px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.project-links,
+.project-main-links {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary,
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-primary,
+.project-link-btn.primary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.project-link-btn.primary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-secondary,
+.project-link-btn:not(.primary) {
+  background: transparent;
+  color: #d4d4d4;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* —— Corps de page —— */
+.container,
+.project-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 3rem var(--page-padding-x) 0;
+}
+
+.mangastore-project .container,
+.portfolio-photo-project .container {
+  padding-top: 3rem;
+}
+
+.project-content section,
+.mangastore-project section,
+.portfolio-photo-project section {
+  margin-bottom: 3.5rem;
+}
+
+.mangastore-project h2,
+.portfolio-photo-project h2,
+.project-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.03em;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.project-content h2::after,
+.mangastore-project h2::after,
+.portfolio-photo-project h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, #d4d4d4, transparent);
+  border-radius: 1px;
+}
+
+.project-overview p,
+.mangastore-project .project-overview p,
+.portfolio-photo-project .project-overview p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #b5b5b5;
+  max-width: 72ch;
+  margin: 0;
+}
+
+.project-overview strong {
+  color: #e8e8e8;
+  font-weight: 600;
+}
+
+/* —— Cartes & grilles —— */
+.architecture-section,
+.tech-stack,
+.database-structure,
+.features,
+.installation-section,
+.project-features,
+.project-tech,
+.project-gallery {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.architecture-grid,
+.features-grid,
+.tech-grid,
+.entities-grid,
+.install-steps {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.architecture-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.features-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.tech-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.arch-card,
+.feature-card,
+.feature,
+.tech-category,
+.entity-card,
+.step-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.arch-card:hover,
+.feature-card:hover,
+.feature:hover,
+.tech-category:hover,
+.entity-card:hover,
+.step-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.arch-card h3,
+.feature-card h3,
+.feature h3,
+.tech-category h3,
+.entity-card h3,
+.step-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e8e8e8;
+  margin: 0 0 0.75rem;
+}
+
+.arch-card li,
+.feature-card p,
+.feature p {
+  color: #b5b5b5;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.arch-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.arch-card li {
+  padding: 0.4rem 0 0.4rem 1.1rem;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.arch-card li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
+
+.arch-card li:last-child {
+  border-bottom: none;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: #d4d4d4;
+  margin-bottom: 0.75rem;
+}
+
+/* Technologies */
+.tech-icons,
+.tech-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-width: 72px;
+}
+
+.tech-icon,
+.tech-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.tech-item span,
+.tech-item i {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.tech-category h3 {
+  font-size: 1rem;
+  color: #d4d4d4;
+  margin-bottom: 0.5rem;
+}
+
+/* Code */
+.code-block,
+.folder-structure pre {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-family: ui-monospace, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #d4d4d4;
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+
+/* Base de données */
+.database-schema {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.db-info p {
+  color: #b5b5b5;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* Spotify structure */
+.tech-structure {
+  margin-top: 1rem;
+}
+
+.tech-details {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tech-details .tech-category p {
+  color: #b5b5b5;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Modal images */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.modal-close,
+.modal-nav {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.modal-close {
+  top: -48px;
+  right: 0;
+}
+
+.modal-close:hover,
+.modal-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-prev {
+  left: -56px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-next {
+  right: -56px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-counter {
+  text-align: center;
+  color: #888;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .project-header {
+    min-height: 36vh;
+    padding-bottom: 2rem;
+  }
+
+  .container,
+  .project-content {
+    padding-top: 2rem;
+  }
+
+  .architecture-section,
+  .tech-stack,
+  .project-features {
+    padding: 1.25rem;
+  }
+
+  .modal-prev {
+    left: 0.5rem;
+  }
+
+  .modal-next {
+    right: 0.5rem;
+  }
+}

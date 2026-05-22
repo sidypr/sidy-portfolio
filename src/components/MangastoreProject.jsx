@@ -83,7 +83,7 @@ const MangastoreProject = () => {
   }, [closeModal, nextImage, prevImage]);
 
   return (
-    <div className="mangastore-project">
+    <div className="mangastore-project page-inner">
       <div className="project-header" style={{backgroundImage:`url(${headerImg})`}}>
         <div className="container">
           <Link to="/projects" className="back-link">← Retour aux projets</Link>

@@ -87,7 +87,7 @@ const PortfolioPhotoProject = () => {
   }, [isModalOpen, handleKeyDown]);
 
   return (
-    <div className="portfolio-photo-project">
+    <div className="portfolio-photo-project page-inner">
       <div className="project-header" style={{backgroundImage:`url(${headerImg})`}}>
         <div className="container">
           <Link to="/projects" className="back-link">← Retour aux projets</Link>

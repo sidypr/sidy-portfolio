@@ -4,8 +4,8 @@
   padding-bottom: 4rem;
 }
 
-.projects-header {
-  padding: 2.5rem var(--page-padding-x) 1.5rem;
+.projects-page__top {
+  padding: 1.5rem var(--page-padding-x) 1rem;
   text-align: center;
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.1s forwards;
@@ -110,6 +110,10 @@
 }
 
 .projects-cards-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
   text-align: center;
   font-family: var(--font-display);
   font-size: var(--text-h2);
@@ -120,6 +124,43 @@
   letter-spacing: 0.08em;
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.projects-cards-hint {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+.project-card-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease;
+}
+
+.project-block:hover .project-card-hint {
+  color: var(--color-text);
+}
+
+.project-card-hint i {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.project-block:hover .project-card-hint i {
+  transform: translateX(3px);
+  transition: transform 0.25s ease;
 }
 
 .projects-gallery {

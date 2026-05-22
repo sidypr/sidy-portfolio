@@ -85,10 +85,10 @@ const Projects = () => {
 
   return (
     <div className="projects-page page-inner">
-      <header className="projects-header">
+      <div className="projects-page__top">
         <h1 className="projects-title inner-title">Projets</h1>
         <p className="projects-subtitle inner-subtitle">Découvrez mes dernières réalisations</p>
-      </header>
+      </div>
 
       <div className="projects-dome-section">
         <DomeGallery images={galleryItems} />
@@ -109,11 +109,12 @@ const Projects = () => {
       </button>
 
       <p className="projects-intro">
-        Explorez la galerie interactive ci-dessus, puis consultez les cartes détaillées ci-dessous pour chaque réalisation.
+        Explorez la galerie interactive ci-dessus, puis cliquez sur une carte pour accéder à la page détaillée du projet.
       </p>
 
       <h2 id="projects-cards" ref={cardsRef} className="projects-cards-title inner-label">
         Projets détaillés
+        <span className="projects-cards-hint">Cliquez sur une carte pour en savoir plus</span>
       </h2>
 
       <div className="projects-gallery">
@@ -134,6 +135,10 @@ const Projects = () => {
                       ))}
                     </div>
                   )}
+                  <span className="project-card-hint">
+                    <i className="fas fa-hand-pointer" aria-hidden="true" />
+                    Cliquez pour voir le détail
+                  </span>
                 </div>
               </div>
             </Link>
@@ -153,6 +158,10 @@ const Projects = () => {
                       ))}
                     </div>
                   )}
+                  <span className="project-card-hint project-card-hint--external">
+                    <i className="fas fa-external-link-alt" aria-hidden="true" />
+                    Ouvrir le site du projet
+                  </span>
                 </div>
               </div>
             </a>

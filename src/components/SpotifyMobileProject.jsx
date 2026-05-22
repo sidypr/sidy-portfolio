@@ -92,7 +92,7 @@ const SpotifyMobileProject = () => {
   ];
 
   return (
-    <div className="spotify-mobile-project">
+    <div className="spotify-mobile-project page-inner">
       <header className="project-header" style={{backgroundImage: `url(${headerImg})`}}>
         <Link to="/projects" className="back-link">← Retour aux projets</Link>
         <div className="project-title-section">
