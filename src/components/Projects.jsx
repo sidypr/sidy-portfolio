@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import './Projects.css';
 import mangastoreImg from '../photo/MANGASTORE.png';
 import pokedexImg from '../photo/POKEDEX.png';
-import spotifyImg from '../photo/API SPOTIFY.png';
 import spotifyMobileImg from '../photo/image &spotifyappmobile_0447.PNG';
 import portfolioImg from '../photo/PORTFOLIO.png';
 import DomeGallery from '../DomeGallery';
@@ -46,23 +45,20 @@ const projects = [
     link: "https://stellular-dasik-5423ce.netlify.app/",
     tags: ["React", "API REST", "Pokémon"]
   },
-  {
-    title: "Spotify Music Explorer",
-    description: "Projet solo : Découverte musicale interactive avec l'API Spotify : recherche d'artistes, albums, écoute de previews et gestion de playlists.",
-    image: spotifyImg,
-    link: "https://tourmaline-licorice-6a583d.netlify.app/",
-    tags: ["React", "API Spotify", "OAuth"]
-  }
 ];
 
 const Projects = () => {
-  // Images principales des projets
+  const cardsRef = useRef(null);
+
+  const scrollToCards = useCallback(() => {
+    cardsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
   const mainProjectImages = projects.map((p) => ({
     src: p.image,
     alt: p.title,
   }));
 
-  // Images supplémentaires pour enrichir la galerie
   const additionalImages = [
     { src: require('../photo/portfolio1.png'), alt: 'Portfolio Photo - Interface' },
     { src: require('../photo/portfolio2.png'), alt: 'Portfolio Photo - Galerie' },
@@ -85,7 +81,6 @@ const Projects = () => {
     { src: require('../photo/image &spotifyappmobile_0454.PNG'), alt: 'Spotify Mobile - Écran 13' },
   ];
 
-  // Combiner toutes les images
   const galleryItems = [...mainProjectImages, ...additionalImages];
 
   return (
@@ -94,18 +89,34 @@ const Projects = () => {
         <h1 className="projects-title">PROJETS</h1>
         <p className="projects-subtitle">Découvrez mes dernières réalisations</p>
       </header>
-      <div style={{ width: '100vw', height: '60vh' }}>
+
+      <div className="projects-dome-section">
         <DomeGallery images={galleryItems} />
+        <div className="projects-dome-fade" aria-hidden="true" />
       </div>
 
+      <button
+        type="button"
+        className="projects-scroll-hint"
+        onClick={scrollToCards}
+        aria-label="Faire défiler vers les fiches projets détaillées"
+      >
+        <span className="projects-scroll-hint__label">Faites défiler pour voir les fiches projets</span>
+        <span className="projects-scroll-hint__chevrons" aria-hidden="true">
+          <i className="fas fa-chevron-down" />
+          <i className="fas fa-chevron-down" />
+        </span>
+      </button>
+
       <p className="projects-intro">
-        Découvrez en un clin d'œil mes projets phares de l'année grâce à la galerie interactive ci-dessus.<br/>
-        Faites défiler, puis plongez dans chaque réalisation via les cartes détaillées ci-dessous pour explorer mon univers créatif et technique.
+        Explorez la galerie interactive ci-dessus, puis consultez les cartes détaillées ci-dessous pour chaque réalisation.
       </p>
 
-      <h2 className="projects-cards-title">Projets détaillés</h2>
+      <h2 id="projects-cards" ref={cardsRef} className="projects-cards-title">
+        Projets détaillés
+      </h2>
 
-      <div className="projects-gallery" style={{ marginTop: '2.5rem' }}>
+      <div className="projects-gallery">
         {projects.map((project, index) => (
           project.isInternal ? (
             <Link key={index} to={project.link} className="project-card-link">
@@ -138,4 +149,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

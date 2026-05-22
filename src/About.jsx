@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import sidyNoir from './photo/sidyNoir.jpeg';
+import sidyPhoto from './photo/sidyNoir1.jpeg';
 
 const About = () => {
   const allSkills = [
@@ -22,10 +22,11 @@ const About = () => {
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', name: 'React Native' },
     { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg', name: 'Expo' }
   ];
-  const skillsGroups = [];
-  for (let i = 0; i < allSkills.length; i += 6) {
-    skillsGroups.push(allSkills.slice(i, i + 6));
-  }
+
+  const frontendSkills = allSkills.filter(s => ['HTML5','CSS3','JavaScript','TypeScript','React','Tailwind','Bootstrap'].includes(s.name));
+  const backendSkills = allSkills.filter(s => ['PHP','Symfony','MySQL','Node.js'].includes(s.name));
+  const mobileSkills = allSkills.filter(s => ['React Native','Expo'].includes(s.name));
+  const toolsSkills = allSkills.filter(s => ['Figma','Git','GitHub','VS Code'].includes(s.name));
 
   return (
     <div className="about-container fadeIn">
@@ -37,13 +38,13 @@ const About = () => {
               <div className="card-header">
                 <h3>Présentation</h3>
               </div>
-              <div className="card-content presentation-content" style={{fontFamily: 'Inter, sans-serif'}}>
+              <div className="card-content presentation-content">
                 <div className="presentation-text">
-                  <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Noisy-le-Grand. Je suis passionné par le développement web et actuellement à la recherche de ma première opportunité professionnelle en tant que développeur web ou intégrateur web.</p>
+                  <p>Bonjour, je m'appelle Sidy Djimbira, développeur web basé à Paris. Je suis passionné par le développement web et actuellement à la recherche de ma première opportunité professionnelle en tant que développeur web ou intégrateur web.</p>
                   <p>Après une formation rigoureuse, j'ai acquis une solide maîtrise des langages du web et des outils modernes pour concevoir, coder et déployer des sites performants et accessibles.</p>
                 </div>
                 <div className="presentation-photo">
-                  <img alt="Sidy Djimbira" src={sidyNoir} />
+                  <img alt="Sidy Djimbira" src={sidyPhoto} />
                 </div>
               </div>
             </div>
@@ -54,43 +55,57 @@ const About = () => {
               </div>
               <div className="card-content">
                 <div className="skills-grid">
-                  {skillsGroups.map((group, i) => (
-                    <div className="skills-row" key={i}>
-                      {group.map((skill, j) => (
-                        <div className="tech-logo" key={j}>
+                  <div className="skills-column">
+                    <h4>Frontend</h4>
+                    <div className="skills-row">
+                      {frontendSkills.map((skill, i) => (
+                        <div className="tech-logo" key={`fe-${i}`}>
                           <img src={skill.icon} alt={skill.name} />
                           <span>{skill.name}</span>
                         </div>
                       ))}
                     </div>
-                  ))}
+                  </div>
+                  <div className="skills-column">
+                    <h4>Backend</h4>
+                    <div className="skills-row">
+                      {backendSkills.map((skill, i) => (
+                        <div className="tech-logo" key={`be-${i}`}>
+                          <img src={skill.icon} alt={skill.name} />
+                          <span>{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="skills-column">
+                    <h4>Mobile</h4>
+                    <div className="skills-row">
+                      {mobileSkills.map((skill, i) => (
+                        <div className="tech-logo" key={`mo-${i}`}>
+                          <img src={skill.icon} alt={skill.name} />
+                          <span>{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="skills-column">
+                    <h4>Outils</h4>
+                    <div className="skills-row">
+                      {toolsSkills.map((skill, i) => (
+                        <div className="tech-logo" key={`to-${i}`}>
+                          <img src={skill.icon} alt={skill.name} />
+                          <span>{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="about-card fadeInUp" style={{animationDelay: '0.3s'}}>
-              <div className="card-header">
-                <h3>Autres Compétences</h3>
-              </div>
-              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
-                <ul className="skills-list">
-                  <li>Création de sites web de A à Z</li>
-                  <li>Mise en ligne et hébergement de projets</li>
-                  <li>Optimisation responsive et accessibilité</li>
-                  <li>Gestion de projet et méthodologie agile</li>
-                  <li>Intégration de maquettes</li>
-                </ul>
-              </div>
-            </div>
+            {/* Section Autres Compétences supprimée */}
 
-            <div className="about-card fadeInUp" style={{animationDelay: '0.4s'}}>
-              <div className="card-header">
-                <h3>Objectif Professionnel</h3>
-              </div>
-              <div className="card-content" style={{fontFamily: 'Inter, sans-serif'}}>
-                <p>Je cherche à intégrer une équipe dynamique qui me permettra de continuer à progresser tout en apportant mes compétences techniques, ma rigueur et ma motivation. Curieux, autonome et à l'écoute, je suis prêt à relever tous les défis techniques et créatifs !</p>
-              </div>
-            </div>
+            {/* Section Objectif Professionnel supprimée à la demande */}
           </div>
         </div>
       </div>

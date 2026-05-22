@@ -1,19 +1,22 @@
+/* Page : fond clair + animation Dither */
 .contact-container {
+  position: relative;
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 2rem;
-  z-index: 1;
+  overflow: hidden;
+  margin-top: calc(-1 * var(--nav-height));
+  padding: calc(var(--nav-height) + 2rem) var(--page-padding-x) 3rem;
+  background: var(--color-bg-page);
 }
 
+/* Formulaire seul : version sombre d'origine */
 .contact-box {
   position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 500px;
   padding: 40px;
@@ -21,8 +24,9 @@
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  margin: 80px auto 20px;
+  margin: 20px auto;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-box h2 {
@@ -30,8 +34,10 @@
   padding: 0;
   color: #fff;
   text-align: center;
+  font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 300;
+  letter-spacing: 0.03em;
 }
 
 .contact-info {
@@ -61,6 +67,7 @@
   color: #03e9f4;
   width: 25px;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .contact-item a {
@@ -75,13 +82,8 @@
 }
 
 @media (max-width: 768px) {
-  .contact-container {
-    padding-top: 70px;
-  }
-  
   .contact-box {
     padding: 20px;
-    margin-top: 20px;
     width: 90%;
   }
-} 
+}

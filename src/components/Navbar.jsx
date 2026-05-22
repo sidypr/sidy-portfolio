@@ -2,38 +2,48 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
+const navItems = [
+  { to: '/', label: 'Accueil', match: (path) => path === '/' },
+  { to: '/projects', label: 'Projets', match: (path) => path === '/projects' || path.startsWith('/projects/') },
+  { to: '/about', label: 'À propos', match: (path) => path === '/about' },
+  { to: '/contact', label: 'Contact', match: (path) => path === '/contact' },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    // Toggle scroll lorsque le menu mobile est ouvert/fermé
     document.body.style.overflow = !isOpen ? 'hidden' : '';
   };
 
-  // Ferme le menu mobile lors d'un changement de route
   useEffect(() => {
     setIsOpen(false);
     document.body.style.overflow = '';
   }, [location.pathname]);
 
+  const isActive = (match) => match(location.pathname);
+
+  const navOnDark = location.pathname === '/' || location.pathname === '/about';
+
   return (
-    <header className="navbar">
+    <header className={`navbar${navOnDark ? ' navbar--on-dark' : ' navbar--light-bg'}`}>
       <div className="navbar-container">
         <div className="navbar-info">
-          <span className="navbar-location">Basé à Paris, France</span>
+          <span className="navbar-location">Paris, France</span>
           <a href="mailto:sidy.djimbira@gmail.com" className="navbar-email">sidy.djimbira@gmail.com</a>
         </div>
         <nav className="navbar-nav">
           <ul className="navbar-links">
-            <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Accueil</Link></li>
-            <li><Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>Projets</Link></li>
-            <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>À propos</Link></li>
-            <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
+            {navItems.map(({ to, label, match }) => (
+              <li key={to}>
+                <Link to={to} className={isActive(match) ? 'active' : ''}>{label}</Link>
+              </li>
+            ))}
           </ul>
-          <button 
-            className={`navbar-toggle ${isOpen ? 'is-active' : ''}`} 
+          <button
+            className={`navbar-toggle ${isOpen ? 'is-active' : ''}`}
             onClick={toggleMenu}
             aria-label="Menu de navigation"
           >
@@ -43,14 +53,21 @@ const Navbar = () => {
       </div>
       <div className={`navbar-mobile ${isOpen ? 'open' : ''}`}>
         <ul className="navbar-mobile-links">
-          <li><Link to="/" onClick={toggleMenu}>Accueil</Link></li>
-          <li><Link to="/projects" onClick={toggleMenu}>Projets</Link></li>
-          <li><Link to="/about" onClick={toggleMenu}>À propos</Link></li>
-          <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
+          {navItems.map(({ to, label, match }) => (
+            <li key={to}>
+              <Link
+                to={to}
+                className={isActive(match) ? 'active' : ''}
+                onClick={toggleMenu}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </header>
   );
 };
 
-export default Navbar; 
+export default Navbar;

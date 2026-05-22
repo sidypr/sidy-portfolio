@@ -27,12 +27,12 @@
 
 .navbar-location {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-muted);
   margin-bottom: 5px;
 }
 
 .navbar-email {
-  color: #fff;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.3s ease;
@@ -75,7 +75,7 @@
 }
 
 .navbar-links li a {
-  color: white;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -90,7 +90,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #fff, transparent);
+  background: linear-gradient(90deg, var(--color-text), transparent);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -118,7 +118,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--color-text);
   position: absolute;
   transition: all 0.3s ease;
 }
@@ -147,7 +147,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(244, 244, 245, 0.98);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -176,7 +176,7 @@
 }
 
 .navbar-mobile-links li a {
-  color: #fff;
+  color: var(--color-text);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 600;
@@ -365,7 +365,7 @@
 
 /* Style pour les liens actifs */
 .navbar-links li a.active {
-  color: #fff;
+  color: var(--color-text);
   opacity: 1;
 }
 
@@ -376,13 +376,13 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #fff, transparent);
+  background: linear-gradient(90deg, var(--color-text), transparent);
   transform: scaleX(1);
 }
 
-/* Assurer que le contenu peut défiler sous la navbar */
-.app-container {
-  padding-top: 60px;
+.navbar-mobile-links li a.active {
+  color: var(--color-text);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 /* Améliorations pour les appareils mobiles */
@@ -401,7 +401,7 @@
     width: 100%;
     display: block;
     padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--color-border);
   }
   
   .navbar-location, .navbar-email {
@@ -409,6 +409,81 @@
   }
 }
 
-.navbar, .navbar-links li a, .navbar-mobile-links li a, .navbar-email, .navbar-location {
-  font-family: 'Cormorant Garamond', serif !important;
+.navbar,
+.navbar-links li a,
+.navbar-mobile-links li a,
+.navbar-email,
+.navbar-location {
+  font-family: var(--font-display);
+}
+
+/* Accueil & À propos : texte blanc */
+.navbar--on-dark .navbar-location {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar--on-dark .navbar-email,
+.navbar--on-dark .navbar-links li a,
+.navbar--on-dark .navbar-mobile-links li a {
+  color: #ffffff;
+}
+
+.navbar--on-dark .navbar-links li a::after {
+  background: linear-gradient(90deg, #fff, transparent);
+}
+
+.navbar--on-dark .navbar-toggle-icon,
+.navbar--on-dark .navbar-toggle-icon::before,
+.navbar--on-dark .navbar-toggle-icon::after {
+  background-color: #ffffff;
+}
+
+.navbar--on-dark .navbar-mobile {
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.navbar--on-dark .navbar-mobile-links li a {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar--on-dark .navbar-mobile-links li a.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.navbar--on-dark .navbar-links li a.active {
+  color: #fff;
+}
+
+/* Projets, contact : fond clair */
+.navbar--light-bg .navbar-location {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.navbar--light-bg .navbar-email,
+.navbar--light-bg .navbar-links li a,
+.navbar--light-bg .navbar-mobile-links li a {
+  color: #1a1a1a;
+}
+
+.navbar--light-bg .navbar-links li a::after {
+  background: linear-gradient(90deg, #1a1a1a, transparent);
+}
+
+.navbar--light-bg .navbar-toggle-icon,
+.navbar--light-bg .navbar-toggle-icon::before,
+.navbar--light-bg .navbar-toggle-icon::after {
+  background-color: #1a1a1a;
+}
+
+.navbar--light-bg .navbar-mobile {
+  background: rgba(244, 244, 245, 0.98);
+}
+
+.navbar--light-bg .navbar-mobile-links li a {
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.navbar--light-bg .navbar-mobile-links li a.active {
+  background: rgba(0, 0, 0, 0.06);
 } 

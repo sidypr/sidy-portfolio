@@ -1,13 +1,14 @@
 import React from 'react';
 import Dither from './Dither';
+import { DITHER_ANIMATION_PROPS } from './ditherConfig';
 import './Home.css';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="home-wrapper">
-      <div className="lightning-background">
-        <Dither waveColor={[0.5, 0.5, 0.5]} disableAnimation={false} enableMouseInteraction={true} mouseRadius={0.3} colorNum={16.6} waveAmplitude={0.57} waveFrequency={3} waveSpeed={0.05} />
+    <div className="home-wrapper page-with-dither">
+      <div className="page-dither-bg">
+        <Dither {...DITHER_ANIMATION_PROPS} />
       </div>
       <div className="home-content">
         <h1 className="home-title">Sidy Djimbira</h1>
@@ -15,6 +16,7 @@ const Home = () => {
         <p className="home-tagline">Je conçois des interfaces modernes, performantes et centrées utilisateur.</p>
         <div className="home-cta">
           <Link to="/projects" className="cta-button">Voir mes projets</Link>
+          <Link to="/contact" className="cta-button btn--ghost">Me contacter</Link>
         </div>
       </div>
     </div>

@@ -12,7 +12,8 @@ export default function Dither({
   pixelSize = 2,
   disableAnimation = false,
   enableMouseInteraction = true,
-  mouseRadius = 0.3
+  mouseRadius = 0.3,
+  transparentBackground = false,
 }) {
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: 0, y: 0 });
@@ -58,6 +59,7 @@ export default function Dither({
       uniform vec2 mousePos;
       uniform int enableMouseInteraction;
       uniform float mouseRadius;
+      uniform int transparentBackground;
 
       vec4 mod289(vec4 x) { return x - floor(x * (1.0/289.0)) * 289.0; }
       vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
@@ -123,8 +125,17 @@ export default function Dither({
           float effect = 1.0 - smoothstep(0.0, mouseRadius, dist);
           f -= 0.5 * effect;
         }
-        vec3 col = mix(vec3(0.0), waveColor, f);
-        gl_FragColor = vec4(col, 1.0);
+        float intensity = clamp(f, 0.0, 1.0);
+        vec3 col = waveColor * intensity;
+        float alpha = transparentBackground == 1
+          ? smoothstep(0.04, 0.22, intensity)
+          : 1.0;
+        if (transparentBackground == 1) {
+          gl_FragColor = vec4(col, alpha);
+        } else {
+          vec3 opaqueCol = mix(vec3(0.0), waveColor, intensity);
+          gl_FragColor = vec4(opaqueCol, 1.0);
+        }
       }
     `;
 
@@ -180,6 +191,12 @@ export default function Dither({
     const uMousePos = gl.getUniformLocation(program, 'mousePos');
     const uEnableMouse = gl.getUniformLocation(program, 'enableMouseInteraction');
     const uMouseRadius = gl.getUniformLocation(program, 'mouseRadius');
+    const uTransparentBackground = gl.getUniformLocation(program, 'transparentBackground');
+
+    if (transparentBackground) {
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    }
 
     const start = performance.now();
     let raf = 0;
@@ -197,6 +214,11 @@ export default function Dither({
       gl.uniform2f(uMousePos, mouseRef.current.x, mouseRef.current.y);
       gl.uniform1i(uEnableMouse, enableMouseInteraction ? 1 : 0);
       gl.uniform1f(uMouseRadius, mouseRadius);
+      gl.uniform1i(uTransparentBackground, transparentBackground ? 1 : 0);
+      if (transparentBackground) {
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+      }
       gl.drawArrays(gl.TRIANGLES, 0, 6);
       raf = requestAnimationFrame(render);
     };
@@ -220,7 +242,12 @@ export default function Dither({
       gl.deleteShader(v);
       gl.deleteShader(f);
     };
-  }, [waveSpeed, waveFrequency, waveAmplitude, waveColor, disableAnimation, enableMouseInteraction, mouseRadius]);
+  }, [waveSpeed, waveFrequency, waveAmplitude, waveColor, disableAnimation, enableMouseInteraction, mouseRadius, transparentBackground]);
 
-  return <canvas ref={canvasRef} className="dither-container" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className={`dither-container${transparentBackground ? ' dither-container--transparent' : ''}`}
+    />
+  );
 }
