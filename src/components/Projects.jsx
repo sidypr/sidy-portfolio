@@ -84,10 +84,10 @@ const Projects = () => {
   const galleryItems = [...mainProjectImages, ...additionalImages];
 
   return (
-    <div className="projects-page">
+    <div className="projects-page page-inner">
       <header className="projects-header">
-        <h1 className="projects-title">PROJETS</h1>
-        <p className="projects-subtitle">Découvrez mes dernières réalisations</p>
+        <h1 className="projects-title inner-title">Projets</h1>
+        <p className="projects-subtitle inner-subtitle">Découvrez mes dernières réalisations</p>
       </header>
 
       <div className="projects-dome-section">
@@ -112,7 +112,7 @@ const Projects = () => {
         Explorez la galerie interactive ci-dessus, puis consultez les cartes détaillées ci-dessous pour chaque réalisation.
       </p>
 
-      <h2 id="projects-cards" ref={cardsRef} className="projects-cards-title">
+      <h2 id="projects-cards" ref={cardsRef} className="projects-cards-title inner-label">
         Projets détaillés
       </h2>
 
@@ -127,6 +127,13 @@ const Projects = () => {
                 <div className="project-info">
                   <h3 className="project-block-title">{project.title}</h3>
                   <p className="project-block-desc">{project.description}</p>
+                  {project.tags?.length > 0 && (
+                    <div className="project-tags">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="project-tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </Link>
@@ -139,6 +146,13 @@ const Projects = () => {
                 <div className="project-info">
                   <h3 className="project-block-title">{project.title}</h3>
                   <p className="project-block-desc">{project.description}</p>
+                  {project.tags?.length > 0 && (
+                    <div className="project-tags">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="project-tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </a>

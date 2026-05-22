@@ -13,67 +13,70 @@
   background: var(--color-bg-page);
 }
 
-/* Formulaire seul : version sombre d'origine */
+/* Formulaire compact — thème sombre */
 .contact-box {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 500px;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.5);
+  max-width: 340px;
+  padding: 1.5rem 1.35rem;
+  background: rgba(0, 0, 0, 0.55);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
   border-radius: 10px;
-  margin: 20px auto;
+  margin: 0 auto;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
+  margin: 0 0 1.15rem;
+  padding: 0 0 0.75rem;
   color: #fff;
   text-align: center;
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: 0.03em;
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0.65rem;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 15px;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .contact-item:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .contact-item i {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #03e9f4;
-  width: 25px;
+  width: 20px;
   text-align: center;
   flex-shrink: 0;
 }
 
 .contact-item a {
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.35;
   transition: color 0.3s ease;
 }
 
@@ -83,7 +86,7 @@
 
 @media (max-width: 768px) {
   .contact-box {
-    padding: 20px;
-    width: 90%;
+    max-width: 320px;
+    padding: 1.25rem 1.1rem;
   }
 }

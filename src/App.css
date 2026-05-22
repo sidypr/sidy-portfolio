@@ -205,3 +205,58 @@ canvas {
   font-weight: 500;
   border: 1px solid var(--color-border);
 }
+
+/* Thème pages internes — noir, blanc, gris */
+.page-inner {
+  --color-bg-page: #0a0a0a;
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #141414;
+  --color-bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-hover: rgba(255, 255, 255, 0.07);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-text: #ffffff;
+  --color-text-muted: #b5b5b5;
+  --color-text-subtle: #888888;
+  --color-accent: #d4d4d4;
+  --color-accent-hover: #ffffff;
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.5);
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+.page-inner .inner-title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+
+.page-inner .inner-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.page-inner .inner-body {
+  font-size: var(--text-body);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.page-inner .inner-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}

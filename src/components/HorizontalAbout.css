@@ -3,7 +3,7 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: url('https://cdn.cosmos.so/7b467313-0e48-4489-8977-0f8098a2afb7?format=jpeg') center/cover no-repeat fixed;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 60px;
+  padding: 60px 48px; /* moins zoomé */
   box-sizing: border-box;
   position: relative;
 }
@@ -45,7 +45,7 @@
 
 .slide-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px; /* réduire un peu */
   margin: 0 auto;
 }
 
@@ -53,7 +53,7 @@
 .presentation-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 80px;
+  gap: 56px; /* plus d'espace contrôlé */
   align-items: center;
 }
 
@@ -90,7 +90,7 @@
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
+  gap: 48px;
 }
 
 .skill-category {
@@ -136,7 +136,7 @@
 .other-skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
 }
 
 .skill-card {

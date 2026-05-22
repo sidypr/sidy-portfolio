@@ -29,10 +29,10 @@ const About = () => {
   const toolsSkills = allSkills.filter(s => ['Figma','Git','GitHub','VS Code'].includes(s.name));
 
   return (
-    <div className="about-container fadeIn">
+    <div className="about-container page-inner fadeIn">
       <div className="about-content">
         <div className="about-text">
-          <h1 className="about-title">À Propos</h1>
+          <h1 className="about-title inner-title">À propos</h1>
           <div className="about-cards">
             <div className="about-card fadeInUp">
               <div className="card-header">

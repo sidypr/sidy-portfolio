@@ -24,11 +24,10 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const isActive = (match) => match(location.pathname);
-
-  const navOnDark = location.pathname === '/' || location.pathname === '/about';
+  const isContact = location.pathname === '/contact';
 
   return (
-    <header className={`navbar${navOnDark ? ' navbar--on-dark' : ' navbar--light-bg'}`}>
+    <header className={`navbar${isContact ? ' navbar--light-bg' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-info">
           <span className="navbar-location">Paris, France</span>
