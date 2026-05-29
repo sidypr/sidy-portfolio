@@ -42,6 +42,22 @@
   opacity: 0.8;
 }
 
+.navbar--on-moodboard .navbar-location,
+.navbar--on-moodboard .navbar-email,
+.navbar--on-moodboard .navbar-links li a {
+  color: #050505;
+}
+
+.navbar--on-moodboard .navbar-links li a::after {
+  background: linear-gradient(90deg, #050505, transparent);
+}
+
+.navbar--on-moodboard .navbar-toggle-icon,
+.navbar--on-moodboard .navbar-toggle-icon::before,
+.navbar--on-moodboard .navbar-toggle-icon::after {
+  background-color: #050505;
+}
+
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -97,6 +113,11 @@
 }
 
 .navbar-links li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar-links li a.active::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -189,7 +210,11 @@
   opacity: 0.7;
 }
 
-@media (max-width: 768px) {
+.navbar-mobile-links li a.active {
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
   .navbar {
     padding: 0 1rem;
   }

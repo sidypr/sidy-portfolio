@@ -5,6 +5,7 @@ import './Navbar.css';
 const navItems = [
   { to: '/', label: 'Accueil', match: (path) => path === '/' },
   { to: '/projects', label: 'Projets', match: (path) => path === '/projects' || path.startsWith('/projects/') },
+  { to: '/moodboard', label: 'Moodboard', match: (path) => path === '/moodboard' },
   { to: '/about', label: 'À propos', match: (path) => path === '/about' },
   { to: '/contact', label: 'Contact', match: (path) => path === '/contact' },
 ];
@@ -25,9 +26,10 @@ const Navbar = () => {
 
   const isActive = (match) => match(location.pathname);
   const isDitherPage = location.pathname === '/' || location.pathname === '/contact';
+  const isMoodboardPage = location.pathname === '/moodboard';
 
   return (
-    <header className={`navbar${isDitherPage ? ' navbar--on-dither' : ''}`}>
+    <header className={`navbar${isDitherPage ? ' navbar--on-dither' : ''}${isMoodboardPage ? ' navbar--on-moodboard' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-info">
           <span className="navbar-location">Paris, France</span>

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './Home';
 import About from './About';
 import Projects from './components/Projects';
+import Moodboard from './components/Moodboard';
 import ContactForm from './ContactForm';
 import MangastoreProject from './components/MangastoreProject';
 import PortfolioPhotoProject from './components/PortfolioPhotoProject';
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/moodboard" element={<Moodboard />} />
           <Route path="/projects/spotify-mobile" element={<SpotifyMobileProject />} />
           <Route path="/projects/mangastore" element={<MangastoreProject />} />
           <Route path="/projects/portfolio-photo" element={<PortfolioPhotoProject />} />
